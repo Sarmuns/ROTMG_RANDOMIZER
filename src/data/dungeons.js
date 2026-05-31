@@ -76,7 +76,7 @@ export const DUNGEONS = [
     ],
   },
   { name: 'High Tech Terror',           slug: 'high-tech-terror',          hash: '2SwppYx', tier: 3, color: '#00BFA5', bg: '#001814' },
-  { name: 'Ice Citadel',                slug: 'ice-citadel',               hash: 'WDJobOf', tier: 3, color: '#80DEEA', bg: '#081418' },
+  { name: 'Ice Citadel',                slug: 'ice-citadel',               hash: 'WDJobOf', tier: 3, color: '#80DEEA', bg: '#081418', exalt: true },
   {
     name: 'Kogbold Steamworks', slug: 'kogbold-steamworks', hash: 'dohicSR', tier: 4, color: '#FF8F00', bg: '#1a1000', exalt: true,
     whites: [
