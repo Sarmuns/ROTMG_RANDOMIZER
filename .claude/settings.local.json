@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "WebSearch",
+      "WebFetch(domain:realmofthemadgod.fandom.com)",
+      "WebFetch(domain:www.realmeye.com)",
+      "WebFetch(domain:static.drips.pw)",
+      "Bash(node scripts/download-sprites.mjs)",
+      "Bash(node scripts/download-portals.mjs)",
+      "PowerShell(Receive-Job *)",
+      "PowerShell(Get-Content *)",
+      "Bash(chromium-cli *)",
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth *)"
+    ]
+  }
+}
