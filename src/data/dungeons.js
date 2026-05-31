@@ -61,7 +61,7 @@ export const DUNGEONS = [
   { name: 'The Third Dimension',        slug: 'third-dimension',           hash: 'Z5CG76m', tier: 3, color: '#7B1FA2', bg: '#0e0414' },
   { name: 'Lair of Shaitan',            slug: 'lair-of-shaitan',           hash: 'px7FwlI', tier: 3, color: '#B71C1C', bg: '#1a0404' },
   {
-    name: 'Secluded Thicket', slug: 'secluded-thicket', hash: 'IeOHusO', tier: 3, color: '#388E3C', bg: '#041408', exalt: true,
+    name: 'Secluded Thicket', slug: 'secluded-thicket', hash: 'IeOHusO', tier: 3, color: '#388E3C', bg: '#041408',
     whites: [
       {
         name: "Tezcacoatl's Tail", hash: 'IFRn3wz', shinyHash: 'QDVWnxf',
