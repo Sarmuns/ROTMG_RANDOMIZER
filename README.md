@@ -41,45 +41,6 @@ npm run preview
 
 ---
 
-## Sprites das classes
-
-As sprites ficam em `public/sprites/` e são referenciadas como `/sprites/<nome>.png`.
-
-Se a imagem não existir, o app exibe automaticamente um placeholder colorido com a inicial da classe.
-
-### Nomes de arquivo esperados (19 classes)
-
-| Classe       | Arquivo                   |
-|--------------|---------------------------|
-| Rogue        | `public/sprites/rogue.png` |
-| Archer       | `public/sprites/archer.png` |
-| Wizard       | `public/sprites/wizard.png` |
-| Priest       | `public/sprites/priest.png` |
-| Warrior      | `public/sprites/warrior.png` |
-| Knight       | `public/sprites/knight.png` |
-| Paladin      | `public/sprites/paladin.png` |
-| Assassin     | `public/sprites/assassin.png` |
-| Necromancer  | `public/sprites/necromancer.png` |
-| Huntress     | `public/sprites/huntress.png` |
-| Mystic       | `public/sprites/mystic.png` |
-| Trickster    | `public/sprites/trickster.png` |
-| Sorcerer     | `public/sprites/sorcerer.png` |
-| Ninja        | `public/sprites/ninja.png` |
-| Samurai      | `public/sprites/samurai.png` |
-| Bard         | `public/sprites/bard.png` |
-| Summoner     | `public/sprites/summoner.png` |
-| Kensei       | `public/sprites/kensei.png` |
-| Druid        | `public/sprites/druid.png` |
-
-### Onde pegar as sprites
-
-As sprites do RotMG estão disponíveis na [wiki do RealmEye](https://www.realmeye.com/).
-Salve cada imagem com o nome exato da tabela acima (tudo minúsculo, `.png`) em `public/sprites/`.
-
-> O Vite copia tudo de `public/` para a raiz do `dist/`, então os caminhos funcionam tanto local quanto no Vercel sem nenhum ajuste.
-
----
-
 ## Funcionalidades
 
 - **Rolar classe** — sorteia uma classe da pool ativa com animação de roleta que desacelera até parar.
