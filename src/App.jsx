@@ -115,17 +115,17 @@ export default function App() {
       <main className="app-main">
         <div className="cards-row cards-row-3">
           <div className="card">
-            <div className="card-label">Classe</div>
+            <div className="card-label">Class</div>
             <ClassResultCard cls={classResult} spinning={isClassSpinning} />
             <button
               className="btn btn-primary"
               onClick={rollClass}
               disabled={isAnySpin || noActiveClasses}
             >
-              {isClassSpinning ? 'Sorteando…' : 'Rolar classe'}
+              {isClassSpinning ? 'Rolling…' : 'Roll Class'}
             </button>
             {noActiveClasses && (
-              <p className="card-warning">Nenhuma classe na pool!</p>
+              <p className="card-warning">No classes in the pool!</p>
             )}
           </div>
 
@@ -137,7 +137,7 @@ export default function App() {
               onClick={rollDungeon}
               disabled={isAnySpin || noActiveDungeons}
             >
-              {isDungeonSpinning ? 'Sorteando…' : 'Rolar dungeon'}
+              {isDungeonSpinning ? 'Rolling…' : 'Roll Dungeon'}
             </button>
             {dungeonResult && !isDungeonSpinning && (
               <button
@@ -149,23 +149,23 @@ export default function App() {
                 }
                 disabled={disabledDungeons.includes(dungeonResult.slug)}
               >
-                {disabledDungeons.includes(dungeonResult.slug) ? '✓ Removida da pool' : '× Remover da pool'}
+                {disabledDungeons.includes(dungeonResult.slug) ? '✓ Removed from pool' : '× Remove from pool'}
               </button>
             )}
             {noActiveDungeons && (
-              <p className="card-warning">Nenhuma dungeon na pool!</p>
+              <p className="card-warning">No dungeons in the pool!</p>
             )}
           </div>
 
           <div className="card">
-            <div className="card-label">Desafio</div>
+            <div className="card-label">Challenge</div>
             <ChallengeResultCard challenge={challengeResult} spinning={isChallengeSpinning} />
             <button
               className="btn btn-secondary"
               onClick={rollChallenge}
               disabled={isAnySpin}
             >
-              {isChallengeSpinning ? 'Sorteando…' : 'Sortear desafio'}
+              {isChallengeSpinning ? 'Rolling…' : 'Roll Challenge'}
             </button>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function App() {
             onClick={rollAll}
             disabled={isAnySpin || noActiveClasses || noActiveDungeons}
           >
-            {isAnySpin ? '✨ Sorteando…' : '✨ Rolar tudo'}
+            {isAnySpin ? '✨ Rolling…' : '✨ Roll All'}
           </button>
         </div>
 

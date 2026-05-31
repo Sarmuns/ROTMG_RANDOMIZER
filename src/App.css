@@ -812,16 +812,23 @@ body {
 }
 
 .item-detail-box {
-  max-width: 420px;
+  max-width: 460px;
+  width: 100%;
   text-align: center;
   position: relative;
+}
+
+.item-detail-box--shiny {
+  max-width: 580px;
 }
 
 .item-detail-sprites {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  padding: 1.25rem 1rem 0.75rem;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  flex-wrap: wrap;
 }
 
 .item-sprite-slot {
@@ -937,6 +944,51 @@ body {
   .btn-all {
     width: 100%;
     padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .modal-box {
+    padding: 1rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+    max-height: 90vh;
+  }
+
+  .item-detail-box,
+  .item-detail-box--shiny {
+    max-width: 100%;
+  }
+
+  .item-detail-sprites {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  .dungeon-detail-box {
+    max-width: 100%;
+  }
+
+  .tier-filters {
+    gap: 0.35rem;
+  }
+
+  .tier-filter-btn {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .chips-grid {
+    gap: 0.4rem;
+  }
+
+  .chip {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
   }
 }
 

@@ -35,18 +35,18 @@ export default function ItemDetailModal({ item, onClose }) {
 
   return (
     <div className="modal-overlay item-detail-overlay" onClick={onClose}>
-      <div className="modal-box item-detail-box" onClick={(e) => e.stopPropagation()}>
+      <div className={`modal-box item-detail-box ${hasShiny ? 'item-detail-box--shiny' : ''}`} onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>✕</button>
 
         <div className="item-detail-sprites">
           <div className="item-sprite-slot">
-            <ItemSprite hash={item.hash} label={item.name} size={80} />
+            <ItemSprite hash={item.hash} label={item.name} size={96} />
             <span className="item-sprite-label">Normal</span>
           </div>
           {hasShiny && (
             <div className="item-sprite-slot item-sprite-shiny">
               <div className="shiny-glow">
-                <ItemSprite hash={item.shinyHash} label={`${item.name} (Shiny)`} size={80} />
+                <ItemSprite hash={item.shinyHash} label={`${item.name} (Shiny)`} size={96} />
               </div>
               <span className="item-sprite-label shiny-label">✦ Shiny</span>
             </div>
@@ -61,13 +61,13 @@ export default function ItemDetailModal({ item, onClose }) {
 
         {item.effect && (
           <div className="item-detail-effect">
-            <span className="item-effect-label">Efeito</span>
+            <span className="item-effect-label">Effect</span>
             <span className="item-effect-text">{item.effect}</span>
           </div>
         )}
 
         {!item.desc && !item.effect && (
-          <p className="item-detail-empty">Sem dados disponíveis para este item.</p>
+          <p className="item-detail-empty">No data available for this item.</p>
         )}
       </div>
     </div>

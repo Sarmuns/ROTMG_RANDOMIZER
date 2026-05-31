@@ -37,13 +37,13 @@ export default function DungeonPoolSelector({ disabledDungeons, setDisabledDunge
     <>
     <section className="pool-section">
       <div className="pool-header">
-        <h2 className="section-title">Pool de Dungeons</h2>
+        <h2 className="section-title">Dungeon Pool</h2>
         <div className="pool-actions">
-          <button className="btn-small" onClick={onEnableAll}>Marcar todas</button>
-          <button className="btn-small btn-dim" onClick={onDisableAll}>Desmarcar todas</button>
+          <button className="btn-small" onClick={onEnableAll}>Enable All</button>
+          <button className="btn-small btn-dim" onClick={onDisableAll}>Disable All</button>
         </div>
       </div>
-      <p className="pool-hint">{activeCount} de {DUNGEONS.length} ativas</p>
+      <p className="pool-hint">{activeCount} of {DUNGEONS.length} active</p>
 
       <div className="tier-filters">
         {TIERS.map((tier) => {
