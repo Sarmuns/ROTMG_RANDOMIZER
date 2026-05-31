@@ -1,30 +1,188 @@
 export const DUNGEONS = [
   // ── Tier 1 — Beginner ───────────────────────────────────
-  { name: 'Pirate Cave',                slug: 'pirate-cave',               hash: 'OqzVQuc', tier: 1, color: '#2B8CE8', bg: '#041020' },
-  { name: 'Forest Maze',                slug: 'forest-maze',               hash: 'm0AO506', tier: 1, color: '#27AE60', bg: '#041408' },
-  { name: 'Spider Den',                 slug: 'spider-den',                hash: 'up93OlG', tier: 1, color: '#A0522D', bg: '#180a04' },
-  { name: 'Forbidden Jungle',           slug: 'forbidden-jungle',          hash: 'beQHm21', tier: 1, color: '#2E8B57', bg: '#041408' },
-  { name: 'The Hive',                   slug: 'the-hive',                  hash: '6WiS9zQ', tier: 1, color: '#F5A623', bg: '#1a1004' },
-  { name: 'Snake Pit',                  slug: 'snake-pit',                 hash: 'Mhtm0aR', tier: 1, color: '#5CB85C', bg: '#081408' },
-  { name: 'Sprite World',               slug: 'sprite-world',              hash: 'K0dJRrF', tier: 1, color: '#9B59B6', bg: '#140820' },
-  { name: 'Cave of a Thousand Treasures', slug: 'cave-of-a-thousand-treasures', hash: '6lgodhZ', tier: 1, color: '#FFD700', bg: '#181000' },
+  {
+    name: 'Pirate Cave', slug: 'pirate-cave', hash: 'OqzVQuc', tier: 1, color: '#2B8CE8', bg: '#041020',
+    whites: [
+      { name: 'Corsair Ring', hash: 'VLrU7Kd', shinyHash: '2L5XfNE', desc: "A lavish golden ring adorned with a prized ruby from Dreadstump's spoils.", effect: '+20 HP, +2 DEF | Awakened: +80 HP, +8 ATK/DEF for 8s when shooting below 25% HP' },
+    ],
+  },
+  {
+    name: 'Forest Maze', slug: 'forest-maze', hash: 'm0AO506', tier: 1, color: '#27AE60', bg: '#041408',
+    whites: [
+      { name: 'Bramble Bow', hash: 'e9kBTMN', shinyHash: 'MFRy2Hs', desc: 'A prickly bow with unshaven thorns jutting out from the grip, making it unwieldy to fire.', effect: '3×30–45 dmg (10° arc) | 120% RoF | Piercing + Wavy' },
+      { name: 'Cocoon Quiver', hash: 'Jo9vFt6', shinyHash: 'ZE0vwGw', desc: "A silky case of arrows woven by Mama Megamoth's larvae for use by her woodland warriors.", effect: 'MP: 60 | 2×150–250 dmg | Paralyzes 2s | Piercing' },
+    ],
+  },
+  {
+    name: 'Spider Den', slug: 'spider-den', hash: 'up93OlG', tier: 1, color: '#A0522D', bg: '#180a04',
+    whites: [
+      { name: 'Poison Fang Dagger', hash: 'DjsPr2i', shinyHash: 'VlQca4G', desc: 'A dagger fashioned from the fang of an enormous spider.', effect: '75–115 dmg | 140% RoF | Awakened: Venom Coating inflicts Bleeding 4s (12 dmg/s)' },
+      { name: 'Spider Shuriken', hash: 'xWn8uJo', shinyHash: 'SvqrlYb', desc: "An arachnid star which slings silk to tangle predators while granting the speed and stamina of Arachna's most agile young.", effect: 'MP: 60 | Hold: Speedy | Release: 200–300 dmg at cursor | Inflicts Slowed 3s' },
+      { name: "Spider's Eye Ring", hash: 'wqOKIuU', shinyHash: 'POnAv9a', desc: 'A ring crafted from the faceted eye of an enormous spider.', effect: '+5 VIT, +5 DEF | On taking damage: Slows enemies within 4.5 tiles for 3s (10s CD)' },
+    ],
+  },
+  {
+    name: 'Forbidden Jungle', slug: 'forbidden-jungle', hash: 'beQHm21', tier: 1, color: '#2E8B57', bg: '#041408',
+    whites: [
+      { name: 'Staff of the Crystal Serpent', hash: 'E3rQtUJ', shinyHash: 'lMNGqXL', desc: 'An ancient staff used both for sacrifice and communion with the gods.', effect: '2×70–85 dmg | 110% RoF | 9 tiles range' },
+      { name: 'Cracked Crystal Skull', hash: 'E4DjT7x', shinyHash: 'uP8w2vo', desc: 'A relic uncovered from the depths of the jungle. It exudes a deep darkness.', effect: 'MP: 95 | +50 HP | Summons undead (5s): 155–225 dmg, armor-pierce, 2% lifesteal' },
+      { name: 'Robe of the Tlatoani', hash: 'qFkrLhP', shinyHash: 'Fgb7GhI', desc: 'A ceremonial robe once worn by the Tlatoani.', effect: '+90 MP, +8 WIS | Zero DEF | Best early-game WIS robe for Necromancer/Sorcerer' },
+      { name: 'Crystal Bone Ring', hash: 'Z1rWlNH', shinyHash: 'HqxLCaV', desc: 'A ring made from a splinter of crystallized sacrificial bone.', effect: '+4 DEX, +4 WIS | 10% chance to restore 5 MP on shoot (0.4s CD)' },
+    ],
+  },
+  {
+    name: 'The Hive', slug: 'the-hive', hash: '6WiS9zQ', tier: 1, color: '#F5A623', bg: '#1a1004',
+    whites: [
+      { name: 'Honey Scepter', hash: 'yk4q1Jx', shinyHash: 'JAR6GUI', desc: 'Stolen from the Queen Bee herself, this scepter possesses the power to destroy evil.', effect: 'MP: 70 | 100 dmg (+4/WIS>50) | 9-tile cone, 6 targets | Shockblast: 25 dmg ×4' },
+      { name: 'Orb of Sweet Demise', hash: 'nuRdcXC', shinyHash: 'yteLed7', desc: 'A magical honeycomb that was once crucial in repelling an assault from the Hornet Rebellion.', effect: 'MP: 90 | Stasis (3 tiles, 3s) + Slowed (WIS-scaling) | Unique dual-CC orb' },
+    ],
+  },
+  {
+    name: 'Snake Pit', slug: 'snake-pit', hash: 'Mhtm0aR', tier: 1, color: '#5CB85C', bg: '#081408',
+    whites: [
+      { name: 'Wand of the Bulwark', hash: 'FVbME6f', shinyHash: 'puy570I', desc: 'This strange weapon was used by ancient battle mages to deter invaders. The secret to its construction has long been lost.', effect: '500–600 dmg | 33% RoF | Parametric orbiting shots — piercing, passes cover' },
+      { name: 'Snake Charmer Pungi', hash: '2QpfLCz', shinyHash: 'hL2lVyW', desc: 'A ceremonial pungi that contains the spirits of fifteen snakes, guiding the righteous through their many paths ahead.', effect: 'MP: 100 | +7 SPD | Party: +4 DEF for 5s | Self: Speedy 4s' },
+      { name: 'Snakeskin Armor', hash: 'g1QQ6Ee', shinyHash: '7GLOigg', desc: 'A tight fitting garment of snake skin that is both functional and stylish.', effect: '+15 DEF, +4 DEX, +4 SPD | Balanced offensive leather armor' },
+      { name: 'Snake Eye Ring', hash: 'lvPfj4Z', shinyHash: 'DqARc1L', desc: 'A ring made from the eye of the Snake Queen.', effect: '+50 HP, +5 ATK, +5 DEF, +5 SPD | On ability use: Speedy 2s (5s CD)' },
+    ],
+  },
+  {
+    name: 'Sprite World', slug: 'sprite-world', hash: 'K0dJRrF', tier: 1, color: '#9B59B6', bg: '#140820',
+    whites: [
+      { name: 'Sprite Wand', hash: 'MkhMJy0', shinyHash: 'LEhkyfk', desc: 'A wand created from the wood of Sprite trees. Seems to be poorly calibrated, though.', effect: '10–290 dmg | Wavy shots | Wild damage variance — low floor, high ceiling' },
+      { name: 'Staff of Extreme Prejudice', hash: 'AyOQRFj', shinyHash: 'tU55Ret', desc: 'Once the most powerful staff in existence; a crack in its frame has rendered it incapable of focusing fire. It remains uniquely deadly.', effect: '10 radial shots (36° gaps) | 95–110 dmg | 40% RoF | All shots must connect for maximum DPS' },
+      { name: 'Cloak of the Planewalker', hash: 'Xqt2Cbq', shinyHash: 'XP382Dj', desc: 'An enchanted cloak crafted by an ancient guild of timeshifter thieves.', effect: 'MP: 90 | +15 SPD, +6 DEX | Teleports to cursor + 3s invisibility (cancellable after 1s)' },
+      { name: 'Mace of the Celestial Forest', hash: '6KSXzTZ', shinyHash: 'jYChT2a', desc: "Limon's power of nature restoration are infused into this mace for her children to wield, traversing the realm and planting seeds of new life.", effect: 'MP: 105 | +5 DEX | Summons random sprite tree (4 variants, 12s, 40–650 dmg)' },
+    ],
+  },
+  {
+    name: 'Cave of a Thousand Treasures', slug: 'cave-of-a-thousand-treasures', hash: '6lgodhZ', tier: 1, color: '#FFD700', bg: '#181000',
+    whites: [
+      { name: 'Jewel Eye Katana', hash: '8q0efTp', shinyHash: 'rZSxJF7', desc: 'The gem fixed into its hilt could be any jewel, but since its original creator had used a ruby, smiths would traditionally use them when crafting a new blade.', effect: '110–175 dmg | Piercing | Only the ✦ Shiny variant drops as a white bag from this dungeon' },
+    ],
+  },
   { name: 'Ancient Ruins',              slug: 'ancient-ruins',             hash: '4gtP9OQ', tier: 1, color: '#95A5A6', bg: '#101214' },
-  { name: 'Magic Woods',                slug: 'magic-woods',               hash: 'nmLtcBD', tier: 1, color: '#7DCEA0', bg: '#081410' },
+  {
+    name: 'Magic Woods', slug: 'magic-woods', hash: 'nmLtcBD', tier: 1, color: '#7DCEA0', bg: '#081410',
+    whites: [
+      { name: 'Spirit Staff', hash: '6GDdhQb', shinyHash: 'BLFYmp3', desc: 'The souls of legendary heroes live on in this vibrant elderwood staff. It represents the ancient druidic pact to protect the domains of Fey across the Realm.', effect: '65–90 dmg | 105% RoF | Outperforms T12 Staff up to 6 DEF' },
+      { name: 'Enchantment Orb', hash: 'rxdnMsw', shinyHash: 'bf0YV9k', desc: 'The crystalline glass in this orb seals away an ancient flora said to rejuvenate the spirit and unleash one\'s force of will against those who threaten the wild.', effect: 'MP: 120 | Self: Berserk 2s | Enemies within 2 tiles: Cursed 3s' },
+      { name: 'Woodland Robe', hash: 'XaN7pD8', shinyHash: 'MpiJcbQ', desc: 'The evergreen plant fibers woven into this robe pulse with an unusual vibrance. This garment lifts your steps and emboldens your mind.', effect: '+12 DEF, +5 SPD, +5 DEX, +5 WIS | 3% on taking damage: spawn fairy (100 dmg/0.8s for 6.4s)' },
+      { name: 'Fairy Ring', hash: 'Qd37W41', shinyHash: '27C4pfV', desc: 'The magical drop of resin fixed atop this ring is a precious keepsake of the Fey. Those who possess it are protected by an old pact formed by the keepers of the forest.', effect: '+60 HP, +5 SPD, +5 DEX, +5 VIT | 3% on shoot below 80% HP: healing fairy (15 HP/s for 8s)' },
+      { name: 'Shield of Flowing Clarity', hash: 'VEfU78C', shinyHash: 'ePK9KMd', desc: 'This shimmering shield allows knights to enhance their concentration on targets, giving them more time to think about their next move in battle.', effect: 'MP: 80 | +17 DEF | 5×150–330 dmg | Slows 4s | Piercing + Pass Cover' },
+    ],
+  },
   { name: 'Beachzone',                  slug: 'beachzone',                 hash: 'Ns31EKU', tier: 1, color: '#F0C060', bg: '#181400' },
 
   // ── Tier 2 — Intermediate ───────────────────────────────
-  { name: 'Candyland Hunting Grounds',  slug: 'candyland',                 hash: 'BKoSv6j', tier: 2, color: '#FF69B4', bg: '#1a0818' },
-  { name: 'Undead Lair',                slug: 'undead-lair',               hash: 'pR8Dgth', tier: 2, color: '#7F8C8D', bg: '#0e1418' },
-  { name: "Puppet Master's Theatre",    slug: 'puppet-masters-theatre',    hash: '6diBou4', tier: 2, color: '#E91E63', bg: '#1a0818' },
-  { name: 'Toxic Sewers',               slug: 'toxic-sewers',              hash: '4Iv5apz', tier: 2, color: '#8BC34A', bg: '#0e1a04' },
-  { name: 'Cursed Library',             slug: 'cursed-library',            hash: '9nQ7nSz', tier: 2, color: '#B8860B', bg: '#140e00' },
-  { name: 'Mad Lab',                    slug: 'mad-lab',                   hash: 'x6dyxMp', tier: 2, color: '#00BCD4', bg: '#00151a' },
-  { name: 'Abyss of Demons',            slug: 'abyss-of-demons',           hash: 'wId2zPS', tier: 2, color: '#E74C3C', bg: '#1a0808' },
-  { name: 'Manor of the Immortals',     slug: 'manor-of-the-immortals',    hash: 'paEB8Qu', tier: 2, color: '#BDC3C7', bg: '#141414' },
-  { name: 'Haunted Cemetery',           slug: 'haunted-cemetery',          hash: 'VB6hMsm', tier: 2, color: '#90A4AE', bg: '#0e1014' },
-  { name: "Davy Jones' Locker",         slug: 'davy-jones-locker',         hash: 'Hqmoe5U', tier: 2, color: '#1976D2', bg: '#040e1a' },
-  { name: 'The Crawling Depths',        slug: 'crawling-depths',           hash: 'V1rfmTa', tier: 2, color: '#6D4C41', bg: '#100804' },
-  { name: 'The Tavern',                 slug: 'the-tavern',                hash: 'DwtjA17', tier: 2, color: '#D4A017', bg: '#181000' },
+  {
+    name: 'Candyland Hunting Grounds', slug: 'candyland', hash: 'BKoSv6j', tier: 2, color: '#FF69B4', bg: '#1a0818',
+    whites: [
+      { name: 'Candy-Coated Armor', hash: 'p9jh9r4', shinyHash: 'P9kki2l', desc: 'Reinforced with magical hard candy from the candy forest. Sticky but strong.', effect: '+30 DEF, -5 DEX | Tied highest DEF heavy armor in the game' },
+      { name: 'Bubblegum Bucket', hash: 'vRwsuLU', desc: 'No one would dare question your dominance of the Hunting Grounds while wearing the remains of a decapitated gumball machine.', effect: 'MP: 85 | +10 DEF, +10 SPD, +10 VIT | Self: Speedy 12s + Healing 4s' },
+      { name: 'Candy Ring', hash: '7azhBBW', shinyHash: 'KTxDzFL', desc: 'A high-fructose ring that will give you pep, but hurt your concentration.', effect: '+10 SPD, +10 VIT, -100 MP, -10 WIS | Primarily used as high-value pet food' },
+    ],
+  },
+  {
+    name: 'Undead Lair', slug: 'undead-lair', hash: 'pR8Dgth', tier: 2, color: '#7F8C8D', bg: '#0e1418',
+    whites: [
+      { name: 'Doom Bow', hash: '3GjgWJy', shinyHash: 'HwN2J4b', desc: 'No mortal can fire this dreaded bow without resting in between shots. It requires tremendous skill to wield.', effect: '500–600 dmg | 33% RoF | Piercing | Highest single-shot bow damage in the game' },
+      { name: 'Spectral Sword', hash: 'qEH9QJi', shinyHash: 'YymwPKB', desc: 'This ghastly blade has the power to emit waves of energy that dance like wraiths in the dark.', effect: '2×100–125 dmg | +4 VIT | Circular shot motion' },
+      { name: 'Wandering Souls Spell', hash: 'oggehEg', shinyHash: 'qRkHFvh', desc: 'Shaping raw magic into spirit-like forms, phantasmal projectiles homing in on the target with precision.', effect: '+3 DEF, +3 SPD | 6 homing piercing shots | 345–500 dmg each | 20% chance to summon Wandering Soul' },
+      { name: 'Spectral Arrowhead', hash: 'd5vmAnb' },
+      { name: 'Ring of Skeletal Specters', hash: 'N2dLIwb', shinyHash: 'gxRxpjm', desc: 'A ghastly ring that calls upon the eager hands of an impossible undead creature.', effect: '+80 HP, +3 ATK, +7 WIS | On taking 20+ dmg: spawns hands (150 dmg, 6 tiles) + Slows 0.8s' },
+    ],
+  },
+  {
+    name: "Puppet Master's Theatre", slug: 'puppet-masters-theatre', hash: '6diBou4', tier: 2, color: '#E91E63', bg: '#1a0818',
+    whites: [
+      { name: 'Marionette Ravager', hash: 'OXOBud7', shinyHash: 'DA8z1Fk' },
+      { name: 'Prism of Dancing Swords', hash: 'wc3KXpa', shinyHash: 'MeCYd10' },
+      { name: 'Harlequin Armor', hash: 'Wn4vs1y', shinyHash: 'MfQuSwa' },
+    ],
+  },
+  {
+    name: 'Toxic Sewers', slug: 'toxic-sewers', hash: '4Iv5apz', tier: 2, color: '#8BC34A', bg: '#0e1a04',
+    whites: [
+      { name: 'Void Blade', hash: 'tJprB54', shinyHash: 'uGemi3U' },
+      { name: 'Murky Toxin', hash: 'YTRasiP', shinyHash: 'T0M6tbB' },
+    ],
+  },
+  {
+    name: 'Cursed Library', slug: 'cursed-library', hash: '9nQ7nSz', tier: 2, color: '#B8860B', bg: '#140e00',
+    whites: [
+      { name: 'Necronomicon', hash: '2QeHp0u', shinyHash: 'MBFZl5N' },
+      { name: "Scholar's Seal", hash: 'YLj6XLl', shinyHash: 'V63yTX7' },
+      { name: 'Wand of Hidden Knowledge', hash: 'yVh0pj9', shinyHash: 'nfeM1eH' },
+      { name: 'Corruption Cutter', hash: 'WiuoSvn', shinyHash: 'RDbS6De' },
+    ],
+  },
+  {
+    name: 'Mad Lab', slug: 'mad-lab', hash: 'x6dyxMp', tier: 2, color: '#00BCD4', bg: '#00151a',
+    whites: [
+      { name: 'Scepter of Fulmination', hash: '4S9VsG7', shinyHash: 'ptW12wM' },
+      { name: 'Robe of the Mad Scientist', hash: 'SwTLhZA', shinyHash: 'dvcFxJ8' },
+      { name: 'Conducting Wand', hash: 'No94h3g', shinyHash: 'WFhzHfx' },
+      { name: 'Experimental Ring', hash: 'CwMs1nv', shinyHash: '1CeRtCE' },
+    ],
+  },
+  {
+    name: 'Abyss of Demons', slug: 'abyss-of-demons', hash: 'wId2zPS', tier: 2, color: '#E74C3C', bg: '#1a0808',
+    whites: [
+      { name: 'Demon Blade', hash: 'UcQg1tr', shinyHash: 'wJVXIxO', desc: 'A swift and hungry blade that is never satisfied with just one kill.', effect: '2×150–175 dmg (25° arc) | Ranks among top swords when both shots connect' },
+      { name: "Berserker's Breastplate", hash: '3wfhQpf', shinyHash: 'CKYbX3e', desc: 'This armor is donned by the Brutes of the Abyss, focusing narrowly on pure offensive power.', effect: '+20 DEF, +4 ATK | Reactive: ATK boost scaling with HP loss (+3/+6/+9 ATK at 90/70/50% HP)' },
+      { name: 'Volcanic Sheath', hash: 'b66TXPg', shinyHash: '73swD8N', desc: 'Archdemon Malphas took a conspicuous liking to this outsider\'s sheath, smuggled in by a newly demonic soul.', effect: 'WIS-scaling dash (400 dmg, 4 tiles) | 1200 trail dmg | 3 dashes, 2s CD | +5 WIS' },
+    ],
+  },
+  {
+    name: 'Manor of the Immortals', slug: 'manor-of-the-immortals', hash: 'paEB8Qu', tier: 2, color: '#BDC3C7', bg: '#141414',
+    whites: [
+      { name: 'Bone Dagger', hash: 'yuTbXQG', shinyHash: 'tD7Eny9' },
+      { name: 'Kyuuketsuki Hitogoroshi', hash: 'uYe1flJ', shinyHash: 'sBKYnez' },
+      { name: "St. Abraham's Wand", hash: 'F3Kmaeg', shinyHash: 'bbl473e' },
+      { name: 'Tome of Purification', hash: 'XpQhE6D', shinyHash: '2zAfSH1' },
+      { name: 'Chasuble of Holy Light', hash: '5SkE5bJ', shinyHash: 'cTU6Fvk' },
+      { name: 'Ring of Divine Faith', hash: 'WoacCEI', shinyHash: '0MqWQvl' },
+    ],
+  },
+  {
+    name: 'Haunted Cemetery', slug: 'haunted-cemetery', hash: 'VB6hMsm', tier: 2, color: '#90A4AE', bg: '#0e1014',
+    whites: [
+      { name: 'Amulet of Dispersion', hash: 'fOZY56P', shinyHash: 'Nu9e66X' },
+      { name: 'Plague Poison', hash: 'HM0JDSk', shinyHash: 'sgz0woL' },
+      { name: "Soul's Guidance", hash: 'dBfapRh', shinyHash: 'eb9I5Jq' },
+      { name: "Resurrected Warrior's Armor", hash: 'lbaYp6l', shinyHash: 'YSqy7bZ' },
+    ],
+  },
+  {
+    name: "Davy Jones' Locker", slug: 'davy-jones-locker', hash: 'Hqmoe5U', tier: 2, color: '#1976D2', bg: '#040e1a',
+    whites: [
+      { name: 'Spirit Dagger', hash: 'VKZyp0S', shinyHash: 'eB74Ws3' },
+      { name: 'Ghostly Prism', hash: 'u21w5cE', shinyHash: 'KgxKuP3' },
+      { name: 'Spectral Cloth Armor', hash: 'uJhfN6g', shinyHash: 'hOB0iT5' },
+      { name: "Captain's Ring", hash: 'GaW3dSH', shinyHash: 'NA2SKx5' },
+      { name: 'Quartermaster Scabbard', hash: 'IyEy6lE', shinyHash: 'TU8mQzC' },
+    ],
+  },
+  {
+    name: 'The Crawling Depths', slug: 'crawling-depths', hash: 'V1rfmTa', tier: 2, color: '#6D4C41', bg: '#100804',
+    whites: [
+      { name: 'Doku No Ken', hash: '41CRVHl', shinyHash: 'zJK23IS' },
+      { name: 'Spider Silk Bow', hash: 'LDXA6F8', shinyHash: '7qMBc8o' },
+      { name: 'Mace of the Depths', hash: 'XPMdiKq', shinyHash: 'EZb1yjk' },
+      { name: 'Silken Sigil', hash: '1hTYeL9' },
+    ],
+  },
+  {
+    name: 'The Tavern', slug: 'the-tavern', hash: 'DwtjA17', tier: 2, color: '#D4A017', bg: '#181000',
+    whites: [
+      { name: 'The Right Hook', hash: 'VZcwjjQ', shinyHash: '5Mdajti' },
+      { name: 'Double Vision Darts', hash: 'zJ0A5q4', shinyHash: 'CYAesGF' },
+      { name: 'Cask Corslet', hash: '0gKF6SB', shinyHash: 'hC2JHYU' },
+      { name: 'Tipsy Topper', hash: 'Af8QY5N', shinyHash: 'CG6ZGF1' },
+      { name: "Brewer's Bangle", hash: 'EMoLtlO', shinyHash: 'gt5cqKp' },
+    ],
+  },
   {
     name: 'Moonlight Village', slug: 'moonlight-village', hash: 'CHqjDCE', tier: 4, color: '#90CAF9', bg: '#080e18', exalt: true,
     whites: [
@@ -84,18 +242,109 @@ export const DUNGEONS = [
   // ── Tier 3 — Advanced ───────────────────────────────────
   { name: 'The Machine',                slug: 'the-machine',               hash: 'Yhd1MCq', tier: 3, color: '#546E7A', bg: '#080e10' },
   { name: 'The Inner Workings',         slug: 'inner-workings',            hash: 'v2Hm1wt', tier: 3, color: '#455A64', bg: '#060c0e' },
-  { name: 'Ocean Trench',               slug: 'ocean-trench',              hash: '9GR3Ypw', tier: 3, color: '#1565C0', bg: '#040e1a' },
-  { name: 'Woodland Labyrinth',         slug: 'woodland-labyrinth',        hash: 'jyKYlZg', tier: 3, color: '#558B2F', bg: '#081404' },
-  { name: 'Deadwater Docks',            slug: 'deadwater-docks',           hash: 'baXW11C', tier: 3, color: '#546E7A', bg: '#080e10' },
-  { name: "Puppet Master's Encore",     slug: 'puppet-masters-encore',     hash: 'UhdCm8R', tier: 3, color: '#AD1457', bg: '#180410' },
-  { name: 'Cnidarian Reef',             slug: 'cnidarian-reef',            hash: 'pXFqErd', tier: 3, color: '#00ACC1', bg: '#001418' },
-  { name: 'Parasite Chambers',          slug: 'parasite-chambers',         hash: 'O43mDnf', tier: 3, color: '#9E9D24', bg: '#101000' },
-  { name: 'Sulfurous Wetlands',         slug: 'sulfurous-wetlands',        hash: '88fMxeA', tier: 3, color: '#F9A825', bg: '#181000' },
-  { name: 'Mountain Temple',            slug: 'mountain-temple',           hash: 'fGgckZI', tier: 3, color: '#8D6E63', bg: '#100c0a' },
-  { name: 'Lair of Draconis',           slug: 'lair-of-draconis',          hash: 'QjX8g5O', tier: 3, color: '#FF7043', bg: '#1a0a04' },
-  { name: 'Tomb of the Ancients',       slug: 'tomb-of-the-ancients',      hash: 'E6a3nHx', tier: 3, color: '#F39C12', bg: '#1a0e00' },
-  { name: 'The Third Dimension',        slug: 'third-dimension',           hash: 'Z5CG76m', tier: 3, color: '#7B1FA2', bg: '#0e0414' },
-  { name: 'Lair of Shaitan',            slug: 'lair-of-shaitan',           hash: 'px7FwlI', tier: 3, color: '#B71C1C', bg: '#1a0404' },
+  {
+    name: 'Ocean Trench', slug: 'ocean-trench', hash: '9GR3Ypw', tier: 3, color: '#1565C0', bg: '#040e1a',
+    whites: [
+      { name: 'Coral Bow', hash: 'jNzGW6I', shinyHash: 'hbLbvhb', desc: 'A bow fashioned from living coral found only in the deepest ocean trenches.', effect: '2×75–95 dmg | 125% RoF | Piercing | +5 SPD' },
+      { name: 'Coral Venom Trap', hash: 'TWsORRd', shinyHash: 'tSsmGEO', desc: 'A trap imbued with deadly venom from the coral of the Ocean Trench.', effect: 'Paralyzes 3s | 425 dmg | +4 SPD, +4 DEX' },
+      { name: 'Coral Silk Armor', hash: 'nlshYfC', shinyHash: 'dz8dj3b', desc: 'Mermaid-made armor woven from unbreakable still living coral threads.', effect: '+14 DEF, +8 DEX, +8 WIS' },
+      { name: 'Coral Ring', hash: 'CUc0xuP', shinyHash: 'hcjBXN2', desc: 'A ring crafted from the dangerous Fire Coral.', effect: '+90 MP, +5 DEX, +5 SPD, +5 WIS | Reduces ability cost by 10%' },
+      { name: 'Sharktooth Sigil', hash: 'YMsWLEH', shinyHash: 'TZhXEuO', desc: 'This necklace is adorned with the tooth of a great white shark.', effect: 'Transforms into shark: +25 SPD, +25 DEX, -25% weapon range for 7s | Stealth up to 3s' },
+    ],
+  },
+  {
+    name: 'Woodland Labyrinth', slug: 'woodland-labyrinth', hash: 'jyKYlZg', tier: 3, color: '#558B2F', bg: '#081404',
+    whites: [
+      { name: 'Leaf Bow', hash: 'HTra5EH', shinyHash: 'gr74UAL', desc: 'Fashioned from the finest logs within the Woodland Labyrinths, using sharp leaves instead of conventional arrows.', effect: '120–175 dmg | 140% RoF | Wavy shots | +5 SPD' },
+      { name: 'Wakizashi of Eastern Winds', hash: 's8elan2', shinyHash: 'W0Dmvoy', desc: 'A wakizashi used by a powerful swordsman in ancient times. It seems to dance through the air as you swing it.', effect: '5 shots | 260–490 dmg | Exposed 4.5s | Pierce + Pass Cover' },
+      { name: "Labyrinth Dweller's Sheath", hash: '5hTq71t', shinyHash: 'zxKMT4j', desc: 'A sheath fully embracing their own ways of life — a bitter expression of dissent.', effect: 'Dash (1–7 tiles, 3 dashes, 800 trail dmg) | 350 pierce dmg/shot | +6 SPD' },
+    ],
+  },
+  {
+    name: 'Deadwater Docks', slug: 'deadwater-docks', hash: 'baXW11C', tier: 3, color: '#546E7A', bg: '#080e10',
+    whites: [
+      { name: "Pirate King's Cutlass", hash: 'WkV86TU', shinyHash: '4iupbhq', desc: 'Used only by the pirates who would make themselves kings — said to be cursed.', effect: '180–230 dmg | 130% RoF | +3 SPD' },
+      { name: 'Wavecrest Concertina', hash: 'zStUCio', shinyHash: 'kDDp0No', desc: 'A peculiar instrument played by the sailors of the seven seas, attracts parrots that obey the musician\'s every command.', effect: 'Lute: summons fighting parrots (450 armor-pierce dmg) + Inspired to party | +4 ATK, +4 DEX' },
+    ],
+  },
+  {
+    name: "Puppet Master's Encore", slug: 'puppet-masters-encore', hash: 'UhdCm8R', tier: 3, color: '#AD1457', bg: '#180410',
+    whites: [
+      { name: 'Prism of Dire Instability', hash: '7TGC5J3', shinyHash: 'gaeBnYz', desc: 'Seemingly bleak at first, this prism has erratic magical properties that affect the light it scatters in unforeseen ways.', effect: 'Deploys decoy that explodes into 15 shots (200–320 dmg each) | +2 ATK, +2 WIS, +40 MP' },
+      { name: 'Thousand Shot', hash: '1cji9i9', shinyHash: 'utZARz3', desc: 'A deadly repeater crossbow — efficient but carries additional weight.', effect: '65–130 dmg | 200% RoF (highest in game) | Armor-piercing | +30 MP' },
+    ],
+  },
+  {
+    name: 'Cnidarian Reef', slug: 'cnidarian-reef', hash: 'pXFqErd', tier: 3, color: '#00ACC1', bg: '#001418',
+    whites: [
+      { name: 'Bottled Medusozoan', hash: '7DI23IS', shinyHash: 'CUsvb41', desc: 'A youthful jellyfish taken from the reefs of the ocean realms, residing within a coralglass jar.', effect: 'Deploys stationary Cnidarian: 2500 armor-piercing poison over 3s (3.5–4.5 tile radius) | +2 DEF, +4 DEX' },
+      { name: 'Cnidaria Rod', hash: 'fc82s46', shinyHash: 'kBbYZFa', desc: 'An intricate scepter of unfathomable power containing the electric fluids of a jellyfish behemoth.', effect: 'Damage scales per target hit (120 base + 150 per additional) | WIS-scaling targets | +2 DEF, +2 DEX, +2 WIS' },
+    ],
+  },
+  {
+    name: 'Parasite Chambers', slug: 'parasite-chambers', hash: 'O43mDnf', tier: 3, color: '#9E9D24', bg: '#101000',
+    whites: [
+      { name: 'Recurring Terror Spell', hash: 'zi9K9k1', shinyHash: 'wYKq3ii', desc: 'Believed to have been lost in a bygone era — recovered from ruins infested by horrific creatures.', effect: '8 parametric shots | 300–350 dmg each | Pass Cover | -20 HP, +2 ATK, +4 DEX, -5 VIT' },
+      { name: 'Scepter of Devastation', hash: 'SvWphtM', shinyHash: 'VZE8c5W', desc: 'A loathsome scepter that converges the life energy of parasites into a soul-rotting bolt of destruction.', effect: '200 dmg (+10/WIS>50) | ATK-scaling shockblast | -20 HP, +4 ATK, -5 VIT, +2 WIS' },
+      { name: 'Maw of Malignance', hash: 'ivmU6yl', shinyHash: 'dH3VJM1', desc: 'Deep within the blood, cartilage, and twisted bone lies the cranium of a once-human victim.', effect: 'MP: 100 | +60 HP, +4 SPD, +4 VIT | Summons minion + stationary maw (50 HP/s to 5 players)' },
+    ],
+  },
+  {
+    name: 'Sulfurous Wetlands', slug: 'sulfurous-wetlands', hash: '88fMxeA', tier: 3, color: '#F9A825', bg: '#181000',
+    whites: [
+      { name: 'Brambletooth Tachi', hash: '9DGwJKM', shinyHash: 'qFAAJ2Z', desc: 'A heavily serrated blade studded with thorns from the ravenous plants of the Sulfurous Wetlands.', effect: '2×75–105 dmg | 140% RoF | Piercing | Boomeranging shots pass through obstacles' },
+      { name: 'Bogwood Crook', hash: 'LNBvq4L', shinyHash: 'SnKzGNQ', desc: 'This ornate herding staff was warped beyond mortal comprehension due to prolonged influence of the twisted beings of the Wetlands.', effect: '3-shot: 1 center 95–145 dmg + 2 sides 40–65 dmg armor-piercing | Converging shots' },
+      { name: 'Warped Mantle', hash: '4SrAZ1u', shinyHash: 'pIhnMij', desc: 'A sickly piece of armor, grown from the twisted bark from one of the few remaining Ent Ancients.', effect: '+18 DEF, +6 VIT | Reactive: Healing 4s when shooting in combat (10s CD)' },
+      { name: 'Sulfuric Stone', hash: '4rBV117', shinyHash: 'ZQVdiL7', desc: 'A peculiarly weathered rock — this makeshift snare is unmatched in power, but it activates on its own terms.', effect: '250 AP impact + 575 sticky dmg | Always explodes after 2s | +25 HP, +25 MP' },
+      { name: 'Thistleleaf Necklace', hash: 'Q0CmiSC', shinyHash: '5ud7G0F', desc: 'This necklace once signified the everlasting bond between two people — carries with it an aura of spite and anguish.', effect: '+90 HP, +5 DEF | On-hit: 150 dmg spore | On-shoot: 175 dmg + 75 bleed over 4s' },
+    ],
+  },
+  {
+    name: 'Mountain Temple', slug: 'mountain-temple', hash: 'fGgckZI', tier: 3, color: '#8D6E63', bg: '#100c0a',
+    whites: [
+      { name: 'Wand of the Fallen', hash: 'Y0owA0u', shinyHash: 'FLVNqWK', desc: 'Made from a cherry tree branch. This wand was gifted by Xil to Daichi for bringing him into this world.', effect: '205–240 dmg | 85% RoF | 6.6 tiles range' },
+      { name: 'Orb of Aether', hash: 'dLSVqgP', shinyHash: 'D3A4TYU', desc: 'This Orb creates a concentrated area of energy. The energy is so dense at its core that foes are paralyzed.', effect: 'Spawns Aether Trap: Slowed (4.5 tiles, 5s) + Paralyzed (2.5 tiles, 2s)' },
+      { name: 'Jade Storm', hash: 'w8lcI3O', shinyHash: 'YYsbzJI', desc: 'A grand scroll capable of summoning sharpened emerald shards, slicing through even the most durable opponent.', effect: '5-shot piercing spell (70° arc) | 475–900 dmg per shot | Pass Cover' },
+      { name: 'Kaiken', hash: 'Ka2tVF9', shinyHash: 'w65VAPB', desc: 'Still believing himself a monk, Daichi could not bear to abandon his wicked material weapon, and so forever concealed it.', effect: 'Sheath: 8×200 dmg (pierce) | Dash (1–5 tiles, 3 dashes, 1600 trail dmg) | Slows 2s | +4 DEX, +4 ATK' },
+    ],
+  },
+  {
+    name: 'Lair of Draconis', slug: 'lair-of-draconis', hash: 'QjX8g5O', tier: 3, color: '#FF7043', bg: '#1a0a04',
+    whites: [
+      { name: 'Leaf Dragon Hide Armor', hash: 'voSE8ih', shinyHash: 'ZhXLJpj', desc: 'Light armor crafted from the hard-as-steel leafy scales of a Leaf Dragon.', effect: '+14 DEF, +50 HP, +6 SPD, +5 VIT | Reactive: +15 DEF for 5s on ability use' },
+      { name: 'Water Dragon Silk Robe', hash: 'gqVpc9Y', shinyHash: 'mrM7RNi', desc: "A magic robe woven from enchanted threads of crystalline silk from a great Water Dragon's body.", effect: '+6 ATK, +13 DEF, +6 SPD, +5 VIT | Reactive: heals 90 HP + Healing 30/s below 80% HP on ability use' },
+      { name: 'Fire Dragon Battle Armor', hash: 'SOFbGGp', shinyHash: 'scMzjBE', desc: 'Battle armor made from Fire Dragon scales, one of the strongest substances this world has ever seen.', effect: '+6 ATK, +17 DEF, +6 SPD, +5 VIT | Reactive: 500 burst + 1000 poison dmg to nearby enemies on proc' },
+      { name: 'Celestial Blade', hash: 'sBelbn9', shinyHash: 'hy15B9y', desc: 'An ancient weapon imbued with the power of the cosmos.', effect: '205–225 dmg katana | 5.2 tiles range | Wavy shots' },
+      { name: 'Midnight Star', hash: 'lc5NZhj', shinyHash: 'M7ICNcc', desc: 'Legends speak of a star touched by Horizon, imbuing his hatred as inky black darkness to forge a dark myth into reality.', effect: '4×400–500 dmg | Piercing + Pass Cover | +10 SPD' },
+      { name: 'Vision of Draconis', hash: '6bFvA7S', shinyHash: 'ds8Es8z', desc: 'The gaze of the mighty watches intensely over the world, waiting for the power of Draconis to rise once again.', effect: 'Orb: summons up to 3 controllable Gazes of Draconis | Applies Curse | 160 dmg/burst over 6.8s' },
+    ],
+  },
+  {
+    name: 'Tomb of the Ancients', slug: 'tomb-of-the-ancients', hash: 'E6a3nHx', tier: 3, color: '#F39C12', bg: '#1a0e00',
+    whites: [
+      { name: 'Tome of Holy Protection', hash: 'Cn1Clyi', shinyHash: 'lpy8kCs' },
+      { name: 'Ring of the Pyramid', hash: 'AGFZBiz', shinyHash: 'OH2l5e5', desc: 'The dolomite stone makes you feel able to stand against anything.', effect: '+4 ATK, +4 DEF, +100 HP | All-purpose endgame ring' },
+      { name: 'Ring of the Sphinx', hash: 'bevUSZ5', shinyHash: 'P8XkoLf', desc: 'The malachite stone makes you feel at peace with the land.', effect: '+4 ATK, +4 DEX, +100 MP | Reduces ability cost by 10%' },
+      { name: "Pharaoh's Requiem", hash: 'wcUJKHq', shinyHash: '5A30qUZ', desc: 'An unusually crafted lute meant to produce soothing sounds of deep sleep and keep wrathful gods dormant.', effect: 'Lute: Inspired to party (4s) + Pharaoh Wrath mask | Reactive: Armored+Weak on taking 50+ dmg | +4 DEF, +4 VIT' },
+      { name: 'Ring of the Nile', hash: 'fzBe6X1', shinyHash: 'SdHaknL', desc: 'The azure stone makes you feel ready for any situation.', effect: '+4 WIS, +4 DEX, +75 HP, +75 MP | Balanced hybrid ring' },
+    ],
+  },
+  {
+    name: 'The Third Dimension', slug: 'third-dimension', hash: 'Z5CG76m', tier: 3, color: '#7B1FA2', bg: '#0e0414',
+    whites: [
+      { name: 'Cloak of Cubic Enigma', hash: 'V27k4Sz', shinyHash: 'rZM1iMb', desc: 'A bulky cloak ill-suited for stealth, but can provide the wearer with great offensive capabilities.', effect: '5s invisibility + Shadow Burst (600 dmg per burst every 0.4s, 4.5 tile radius while invis) | +5 DEF' },
+      { name: 'Shadow Serpent Sidearm', hash: 'bURNlfK', shinyHash: 'T3XxcI8', desc: 'An angular wakizashi crafted from the core of the Shadow Cube God — can unleash a devastating onslaught.', effect: '550–650 dmg/shot | Pierce + Armor Pierce | Exposed 3s | +50 HP, +5 VIT' },
+      { name: 'Seal of Cubic Conundra', hash: 'pXO3kh8', shinyHash: 'ujfGL1Z', desc: 'A seal granting the user access to other dimensions, though the means by which this is accomplished are unknown.', effect: 'Party heal + dmg buff (4.5 tiles, 4s) + enemy Slow (3.5 tiles, 4s) | +50 HP, +3 DEF' },
+    ],
+  },
+  {
+    name: 'Lair of Shaitan', slug: 'lair-of-shaitan', hash: 'px7FwlI', tier: 3, color: '#B71C1C', bg: '#1a0404',
+    whites: [
+      { name: 'Skull of Endless Torment', hash: 'XSUsjgZ', shinyHash: 'BVNenwk', desc: 'This skull glows with the stolen soul of a phoenix trapped many years ago by Shaitan.', effect: '+50 HP, +3 DEF, +3 DEX | 250 dmg (+20/WIS>50) | Heals 80 HP | Full meter: summons minions + purifies' },
+      { name: 'Wakizashi of Crossing Fires', hash: 'oSQ2Xq5', shinyHash: 'Yeb94mL', desc: 'A blade created within the Hellforge and enchanted with dark magics to grant its wielder the power of a demon king.', effect: '6×400–450 dmg | Exposed 3s | Piercing | +8 ATK, +2 VIT' },
+      { name: 'Igneous Starblossom', hash: 'MIf51tv', shinyHash: 'tWLTqB4', desc: 'It is believed that astral stardust landed during the Primal Era, giving life to these now-extinct flowers.', effect: '2×325–525 dmg | Plants Igneous Bomb (1000 dmg, 3.5 tile radius) | +4 SPD, +9 VIT' },
+    ],
+  },
   {
     name: 'Secluded Thicket', slug: 'secluded-thicket', hash: 'IeOHusO', tier: 3, color: '#388E3C', bg: '#041408',
     whites: [
@@ -131,8 +380,27 @@ export const DUNGEONS = [
       },
     ],
   },
-  { name: 'High Tech Terror',           slug: 'high-tech-terror',          hash: '2SwppYx', tier: 3, color: '#00BFA5', bg: '#001814' },
-  { name: 'Ice Citadel',                slug: 'ice-citadel',               hash: 'WDJobOf', tier: 3, color: '#80DEEA', bg: '#081418', exalt: true },
+  {
+    name: 'High Tech Terror', slug: 'high-tech-terror', hash: '2SwppYx', tier: 3, color: '#00BFA5', bg: '#001814',
+    whites: [
+      { name: 'C.L.A.W.', hash: 'QhCXx6o', desc: 'A highly versatile tool modified from what was once just a vial holder — equipped with blades for any situation.', effect: '3-shot burst (80–110 dmg each) | 200% RoF | Armor-piercing | ST Scientific Summoner Set' },
+      { name: 'B.O.O.M.', hash: 'fqNi03h', desc: 'Development of this compact M.E.R.V. took an explosive turn.', effect: 'Summons Wandering M.E.R.V. that explodes for 1250 dmg after 5s, fires paralyzing shots | ST Scientific Summoner Set' },
+      { name: 'A.R.M.O.R.', hash: 'XoFFZfe', desc: 'Not to be confused with a more traditional lab coat, this robe is steeped in chemicals to protect from radiation.', effect: '+5 ATK, +12 DEF, +5 SPD, +10 VIT | ST Scientific Summoner Set' },
+      { name: 'C.O.N.T.R.O.L.L.E.R.', hash: 'NTx7xLN', desc: 'This feat of technology enables approved users to control all primary functions of the lab facility.', effect: '+50 HP, +8 DEF, +5 SPD | ST Scientific Summoner Set' },
+    ],
+  },
+  {
+    name: 'Ice Citadel', slug: 'ice-citadel', hash: 'WDJobOf', tier: 3, color: '#80DEEA', bg: '#081418', exalt: true,
+    whites: [
+      { name: 'Staff of Esben', hash: 'LBDSDfB', desc: 'Perhaps all that remains of Esben, whoever he was.', effect: '2×70–105 dmg | Chargeable: 1500–1800 dmg, armor-ignore, Vulnerability 3s | +3 DEF' },
+      { name: 'Skullish Remains of Esben', hash: 'Ytpddcl', desc: 'The skull still seems to contain some of the Void Entity\'s power.', effect: 'Summons Esben Undead: 170–255 dmg, Slowed | +40 HP, -3 SPD, +4 ATK' },
+      { name: "Esben's Vows", hash: 'es4f5XM', desc: 'A hardy slab of ice wounded with crude markings — passionate wedding vows are faintly readable.', effect: 'Giant icicle → 6 shards (600–650 dmg) + 12 AP shards (100 dmg + 5% Vulnerability 5s) | +5 DEF' },
+      { name: "Ase's Echo", hash: 'flXR895', shinyHash: 'aIy6KF5', desc: 'A fragmented prism constantly mending its cracks — creates an unstable link between two spaces.', effect: 'Mark location with Berserk aura (3 tiles) | Teleport back + 1000 dmg AoE + Armored (5 tiles, 5s)' },
+      { name: "Esben's Twisted Heart", hash: 'mN3aGBc', shinyHash: '6uZBSK3', desc: 'The frostbitten winds whisper her name, and the blades sing of her sorrow.', effect: '7×250–350 dmg armor-pierce | Initial 1000 dmg | Passes through obstacles' },
+      { name: "Esben's Shaman Attire", hash: 'V8pfKqe', shinyHash: 'uBrB6CN', desc: 'A glacial robe worn by the witch doctors of a bygone ice tribe, encased in a layer of permafrost.', effect: '+15 DEF, +60 HP, +6 ATK | 40% chance to Slow nearby enemies 5s on taking damage' },
+      { name: "Esben's Wedding Ring", hash: 'hIN9shz', desc: 'A memento of a life long gone — still feel the warmth from years past through the frigid ice.', effect: '+80 HP, +80 MP, +10 ATK, -5 DEF | Reactive: Damaging 1s when shooting while Berserk' },
+    ],
+  },
   {
     name: 'Kogbold Steamworks', slug: 'kogbold-steamworks', hash: 'dohicSR', tier: 4, color: '#FF8F00', bg: '#1a1000', exalt: true,
     whites: [
@@ -318,9 +586,7 @@ export const DUNGEONS = [
         desc: 'A long-lost druid\'s tome that catalogs medicinal mushrooms. Many pocket spaces contain spore samples, which can be made fully grown through incantations.',
         effect: 'MP: 130 | +6 DEX, +6 SPD | Creates stationary healing mushroom: 90 HP/s to up to 15 players within 6 tiles (6s duration)',
       },
-      {
-        name: 'Cave Dweller Trap', hash: 'J0lgclR', shinyHash: 'EiYJfvq',
-      },
+      { name: 'Cave Dweller Trap', hash: 'J0lgclR', shinyHash: 'EiYJfvq', desc: 'A ceremonial trap used by the elite members of the Mushroom Tribes to ensnare those who trespass their sacred sanctum.', effect: 'MP: 80 | +6 ATK | Spawns Crystal Sentry: 450 dmg/0.8s for 5s (single-target, cannot miss)' },
     ],
   },
   {
@@ -356,12 +622,8 @@ export const DUNGEONS = [
         desc: 'Believed to be some kind of artificial organ, this sheath embeds the weapon in a solid crystal coating before violently fracturing into shrapnel when drawn.',
         effect: '+40 HP, +5 ATK | MP: 130 | 4×500 dmg wavy piercing shots | Dash (3 max): 1200 trail dmg + stacking ATK% bonus per dash',
       },
-      {
-        name: 'Fractal Blades', hash: 'xh99uQc', shinyHash: 'SsqaghD',
-      },
-      {
-        name: 'Cloak of Refraction', hash: 'P4v3VhO', shinyHash: 'ym3CSRa',
-      },
+      { name: 'Fractal Blades', hash: 'xh99uQc', shinyHash: 'SsqaghD', desc: 'An impossibly intricate pattern belies these blades, carved from a self-perfecting crystalline deity.', effect: '2 fast shots (75–105 dmg, 20t/s) + 4 short-range shots (55–75 dmg, 8t/s) | All piercing, pass cover' },
+      { name: 'Cloak of Refraction', hash: 'P4v3VhO', shinyHash: 'ym3CSRa', desc: 'This heavy cloak cleverly conceals its user not by magic, but by channeling the light around them as camouflage.', effect: 'MP: 90 | +3 DEF, +10 SPD | Summons 3 mirror images (200–300 dmg, pierce) + 5s invisibility | Lethal Strike on exit' },
       {
         name: 'Echoes Prism', hash: 'Wh0Uqt5',
         desc: 'A fragmented prism constantly mending its cracks and refracturing. When agitated, it ejects volatile shards until each fragment spirals back into equilibrium.',
@@ -370,9 +632,7 @@ export const DUNGEONS = [
       {
         name: 'Fractured Gemstone Wakizashi', hash: 'd6dBKvS', shinyHash: '3Oo8WA0',
       },
-      {
-        name: 'Star of Enlightenment', hash: '98qG4Er', shinyHash: 'UneFotS',
-      },
+      { name: 'Star of Enlightenment', hash: '98qG4Er', shinyHash: 'UneFotS', desc: 'A perfectly cut crystal encasing light from the oldest stars in the universe. All who hold it are filled with a sense of peace and concentration.', effect: '+5 DEX, -10 SPD | Hold: +4 DEX, Berserk (24 MP/s) | Release: 1500–2000 dmg single shot, pass cover' },
       {
         name: 'Crystallised Mist', hash: 'TeN17x2',
         desc: 'This strange trinket creates a cloud of crystalline particles rendering anyone inside invisible.',
@@ -760,8 +1020,26 @@ export const DUNGEONS = [
       },
     ],
   },
-  { name: 'Heroic Undead Lair',         slug: 'heroic-undead-lair',        hash: 'z4UFKSh', tier: 3, color: '#B0BEC5', bg: '#0e1014' },
-  { name: 'Infernal Abyss of Demons',   slug: 'infernal-abyss',            hash: 'waeR46M', tier: 3, color: '#FF5252', bg: '#1a0404' },
+  {
+    name: 'Heroic Undead Lair', slug: 'heroic-undead-lair', hash: 'z4UFKSh', tier: 3, color: '#B0BEC5', bg: '#0e1014',
+    whites: [
+      { name: 'Doom Bow', hash: '3GjgWJy', shinyHash: 'HwN2J4b', desc: 'No mortal can fire this dreaded bow without resting in between shots. It requires tremendous skill to wield.', effect: '500–600 dmg | 33% RoF | Piercing | Highest single-shot bow damage in the game' },
+      { name: 'Spectral Sword', hash: 'qEH9QJi', shinyHash: 'YymwPKB', desc: 'This ghastly blade has the power to emit waves of energy that dance like wraiths in the dark.', effect: '2×100–125 dmg | +4 VIT | Circular shot motion' },
+      { name: 'Wandering Souls Spell', hash: 'oggehEg', shinyHash: 'qRkHFvh', desc: 'Shaping raw magic into spirit-like forms, phantasmal projectiles homing in on the target with precision.', effect: '+3 DEF, +3 SPD | 6 homing piercing shots | 345–500 dmg each | 20% chance to summon Wandering Soul' },
+      { name: 'Bow of the Morning Star', hash: 'NhighV0', desc: 'A bow of light forged by the angels for use in their eternal struggle against darkness and evil.', effect: '500–600 dmg | 33% RoF | Piercing | Heroic reskin of Doom Bow' },
+      { name: 'Ring of Skeletal Specters', hash: 'N2dLIwb', shinyHash: 'gxRxpjm', desc: 'A ghastly ring that calls upon the eager hands of an impossible undead creature.', effect: '+80 HP, +3 ATK, +7 WIS | On taking 20+ dmg: spawns hands (150 dmg, 6 tiles) + Slows 0.8s' },
+    ],
+  },
+  {
+    name: 'Infernal Abyss of Demons', slug: 'infernal-abyss', hash: 'waeR46M', tier: 3, color: '#FF5252', bg: '#1a0404',
+    whites: [
+      { name: 'Demon Blade', hash: 'UcQg1tr', shinyHash: 'wJVXIxO', desc: 'A swift and hungry blade that is never satisfied with just one kill.', effect: '2×150–175 dmg (25° arc) | Ranks among top swords when both shots connect' },
+      { name: 'Sword of Illumination', hash: 'y3rTci5', desc: 'A sword that, when held by one true of heart, will release magic and ignite in flames.', effect: '2×150–175 dmg | Demon Blade reskin | Awakened: Hellfire Edge (3 hellfire slashes)' },
+      { name: "Berserker's Breastplate", hash: '3wfhQpf', shinyHash: 'CKYbX3e', desc: 'This armor is donned by the Brutes of the Abyss, focusing narrowly on pure offensive power.', effect: '+20 DEF, +4 ATK | Reactive: ATK boost scaling with HP loss (+3/+6/+9 ATK at 90/70/50% HP)' },
+      { name: 'Adamantine Helm', hash: 'C3ZF6hy', shinyHash: '7gMgZ2W', desc: 'A masterpiece of craftsmanship, forged in the fires of the volcanic abyss.', effect: 'Party Berserk + Healing 5s (5 tiles) | Self: +20 VIT Boost 5s | +10 DEF, +4 ATK, +4 VIT' },
+      { name: 'Volcanic Sheath', hash: 'b66TXPg', shinyHash: '73swD8N', desc: 'Archdemon Malphas took a conspicuous liking to this outsider\'s sheath, smuggled in by a newly demonic soul.', effect: 'WIS-scaling dash (400 dmg, 4 tiles) | 1200 trail dmg | 3 dashes, 2s CD | +5 WIS' },
+    ],
+  },
   {
     name: 'Plagued Nest', slug: 'plagued-nest', hash: 'l71FWP1', tier: 4, color: '#FFCA28', bg: '#1a1204', exalt: true,
     whites: [
@@ -780,9 +1058,7 @@ export const DUNGEONS = [
         desc: 'Fashioned by the Beekeeper, this pendant allows the wearer to command the forces of the nest, directing swarms of bees to attack enemies.',
         effect: '+4 DEX, +4 ATK | MP: 110 | Bee Form (full meter): +30 DEX, +25 ATK, -50% weapon range for 7.6s | Equivalent to 3.5 Overclocking Amulets',
       },
-      {
-        name: 'Green Beehemoth Quiver', hash: 'hTphc7t', shinyHash: 'IuqjM6h',
-      },
+      { name: 'Green Beehemoth Quiver', hash: 'hTphc7t', shinyHash: 'IuqjM6h', desc: 'A quiver crafted from the remains of a green Beehemoth, filled with razor-sharp arrows fashioned from Killer Bee stingers.', effect: 'MP: 90 | +3 ATK, +3 DEX | 3×300–420 dmg (DEX scales) | Piercing + Pass Cover | Inflicts Slowed 5s' },
       {
         name: 'Hivemaster Helm', hash: 'rlxhfqA', shinyHash: 'ZJYUIky',
         desc: 'A nefarious helm combining pheromones and Killer Honey to captivate Killer Bees into servitude.',
@@ -843,9 +1119,7 @@ export const DUNGEONS = [
         desc: 'The oldest forms of automatic computing built by the Kogbolds were a far cry from the self-improving artificial intelligence of the modern Core designs.',
         effect: 'MP: 135 | +50 MP, +6 DEX | Summons undead: 4 expanding explosions (340→255 dmg each), armor-pierce, 10% lifesteal',
       },
-      {
-        name: 'Kogbold Multitool', hash: 'Ot9Xoe5', shinyHash: 'J0Tul3O',
-      },
+      { name: 'Kogbold Multitool', hash: 'Ot9Xoe5', shinyHash: 'J0Tul3O', desc: 'The KI132 Bladed Multitool finds its way into the hands of many Kogbold Engineers. Equipped with blades for any situation, as well as a handy pair of pliers.', effect: '3 modes (hold Shift): Sweep (12 shots, Exposed 4s, +10 DEX) | Strike (6 converging shots, 450–550 dmg) | Shield (8 circling shots, 400–500 AP dmg, +10 DEF)' },
       {
         name: 'Kogbold Enhancement Core', hash: 'AHGKQwy', shinyHash: 'isUOrSE',
         desc: 'A well machined object said to give the Kogbolds their strength.',
