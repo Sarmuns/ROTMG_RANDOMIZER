@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import ModalBox from './ModalBox.jsx';
 import ItemDetailModal from './ItemDetailModal.jsx';
 
 const BASE = 'https://www.realmeye.com/s/a/img/wiki/i/';
@@ -18,7 +19,7 @@ function WhiteItem({ item, onClick }) {
         />
       )}
       <span className="white-item-name">{item.name}</span>
-      {item.shinyHash && <span className="white-item-shiny-dot" title="Tem versão shiny">✦</span>}
+      {item.shinyHash && <span className="white-item-shiny-dot" title="Has shiny variant">✦</span>}
     </button>
   );
 }
@@ -26,31 +27,15 @@ function WhiteItem({ item, onClick }) {
 export default function WhiteBagModal({ dungeon, onClose }) {
   const [selectedItem, setSelectedItem] = useState(null);
 
-  useEffect(() => {
-    function onKey(e) { if (e.key === 'Escape') onClose(); }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [onClose]);
-
   return (
     <>
-      <div className="modal-overlay" onClick={onClose}>
-        <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-          <div className="modal-header">
-            <span className="modal-title">White Bags — {dungeon.name}</span>
-            <button className="modal-close" onClick={onClose}>✕</button>
-          </div>
-          <div className="whites-grid">
-            {dungeon.whites.map((item) => (
-              <WhiteItem
-                key={item.hash}
-                item={item}
-                onClick={() => setSelectedItem(item)}
-              />
-            ))}
-          </div>
+      <ModalBox title={`White Bags — ${dungeon.name}`} onClose={onClose}>
+        <div className="whites-grid">
+          {dungeon.whites.map((item) => (
+            <WhiteItem key={item.hash} item={item} onClick={() => setSelectedItem(item)} />
+          ))}
         </div>
-      </div>
+      </ModalBox>
 
       {selectedItem && (
         <ItemDetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />

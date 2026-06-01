@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import ModalBox from './ModalBox.jsx';
 
 const BASE = 'https://www.realmeye.com/s/a/img/wiki/i/';
 
-function ItemSprite({ hash, label, size = 80 }) {
+function ItemSprite({ hash, label, size = 96 }) {
   const [err, setErr] = useState(false);
   if (err) {
     return (
-      <div className="item-detail-sprite-fallback" style={{ width: size, height: size }}>
-        ?
-      </div>
+      <div className="item-detail-sprite-fallback" style={{ width: size, height: size }}>?</div>
     );
   }
   return (
@@ -25,51 +24,43 @@ function ItemSprite({ hash, label, size = 80 }) {
 }
 
 export default function ItemDetailModal({ item, onClose }) {
-  useEffect(() => {
-    function onKey(e) { if (e.key === 'Escape') onClose(); }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [onClose]);
-
   const hasShiny = !!item.shinyHash;
 
   return (
-    <div className="modal-overlay item-detail-overlay" onClick={onClose}>
-      <div className={`modal-box item-detail-box ${hasShiny ? 'item-detail-box--shiny' : ''}`} onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>✕</button>
-
-        <div className="item-detail-sprites">
-          <div className="item-sprite-slot">
-            <ItemSprite hash={item.hash} label={item.name} size={96} />
-            <span className="item-sprite-label">Normal</span>
-          </div>
-          {hasShiny && (
-            <div className="item-sprite-slot item-sprite-shiny">
-              <div className="shiny-glow">
-                <ItemSprite hash={item.shinyHash} label={`${item.name} (Shiny)`} size={96} />
-              </div>
-              <span className="item-sprite-label shiny-label">✦ Shiny</span>
-            </div>
-          )}
+    <ModalBox
+      className={`item-detail-box${hasShiny ? ' item-detail-box--shiny' : ''}`}
+      zIndex={200}
+      onClose={onClose}
+    >
+      <div className="item-detail-sprites">
+        <div className="item-sprite-slot">
+          <ItemSprite hash={item.hash} label={item.name} size={96} />
+          <span className="item-sprite-label">Normal</span>
         </div>
-
-        <div className="item-detail-name">{item.name}</div>
-
-        {item.desc && (
-          <p className="item-detail-desc">"{item.desc}"</p>
-        )}
-
-        {item.effect && (
-          <div className="item-detail-effect">
-            <span className="item-effect-label">Effect</span>
-            <span className="item-effect-text">{item.effect}</span>
+        {hasShiny && (
+          <div className="item-sprite-slot item-sprite-shiny">
+            <div className="shiny-glow">
+              <ItemSprite hash={item.shinyHash} label={`${item.name} (Shiny)`} size={96} />
+            </div>
+            <span className="item-sprite-label shiny-label">✦ Shiny</span>
           </div>
-        )}
-
-        {!item.desc && !item.effect && (
-          <p className="item-detail-empty">No data available for this item.</p>
         )}
       </div>
-    </div>
+
+      <div className="item-detail-name">{item.name}</div>
+
+      {item.desc && <p className="item-detail-desc">"{item.desc}"</p>}
+
+      {item.effect && (
+        <div className="item-detail-effect">
+          <span className="item-effect-label">Effect</span>
+          <span className="item-effect-text">{item.effect}</span>
+        </div>
+      )}
+
+      {!item.desc && !item.effect && (
+        <p className="item-detail-empty">No data available for this item.</p>
+      )}
+    </ModalBox>
   );
 }
