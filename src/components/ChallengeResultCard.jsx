@@ -19,15 +19,22 @@ function DifficultyStars({ level }) {
 }
 
 export default function ChallengeResultCard({ challenge, spinning }) {
+  const revealed = challenge && !spinning;
+
   return (
-    <div className={`result-inner ${spinning ? 'result-spinning' : ''} ${challenge && !spinning ? 'result-revealed' : ''}`}>
-      <div className={`challenge-icon ${spinning ? 'name-blur' : ''}`}>
-        {challenge ? challenge.icon : '🎲'}
+    <div className={`result-inner ${spinning ? 'result-spinning' : ''} ${revealed ? 'result-revealed' : ''}`}>
+      <div
+        className="challenge-icon-wrap"
+        key={spinning ? (challenge?.id ?? 'empty') : 'revealed'}
+      >
+        <span className={`challenge-icon ${spinning ? 'name-blur' : ''}`}>
+          {challenge ? challenge.icon : '🎲'}
+        </span>
       </div>
       <div className={`result-name ${spinning ? 'name-blur' : ''}`}>
         {challenge ? challenge.name : '???'}
       </div>
-      {challenge && !spinning && (
+      {revealed && (
         <>
           <div className="challenge-meta">
             {challenge.type && (
@@ -38,9 +45,7 @@ export default function ChallengeResultCard({ challenge, spinning }) {
                 {challenge.type}
               </span>
             )}
-            {challenge.difficulty && (
-              <DifficultyStars level={challenge.difficulty} />
-            )}
+            {challenge.difficulty && <DifficultyStars level={challenge.difficulty} />}
           </div>
           <div className="challenge-desc">{challenge.desc}</div>
         </>
