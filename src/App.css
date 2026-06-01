@@ -839,13 +839,16 @@ body {
 
 .dungeon-diff-label {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--text-dim);
   margin-bottom: 0.3rem;
+}
+
+.dungeon-diff-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  opacity: 0.85;
 }
 
 .dungeon-diff-value {

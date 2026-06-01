@@ -16,8 +16,13 @@ function DifficultyBar({ value }) {
   return (
     <div className="dungeon-diff-wrap">
       <div className="dungeon-diff-label">
-        <span>Difficulty</span>
-        <span className="dungeon-diff-value" style={{ color }}>{value}</span>
+        <img
+          src="https://www.realmeye.com/s/a/img/wiki/i/gKMdCOG.png"
+          alt="Difficulty"
+          className="dungeon-diff-icon"
+          style={{ imageRendering: 'pixelated' }}
+        />
+        <span className="dungeon-diff-value" style={{ color }}>{value} / 10</span>
       </div>
       <div className="dungeon-diff-track">
         <div
