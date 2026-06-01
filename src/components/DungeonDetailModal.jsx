@@ -10,25 +10,35 @@ function difficultyColor(v) {
   return '#c026d3';
 }
 
+const TOMB_FULL = 'https://www.realmeye.com/s/a/img/wiki/i/gKMdCOG.png';
+const TOMB_HALF = 'https://www.realmeye.com/s/a/img/wiki/i/4tJF9j9.png';
+
 function DifficultyBar({ value }) {
-  const pct = (value / 10) * 100;
-  const color = difficultyColor(value);
+  const full  = Math.floor(value);
+  const hasHalf = (value % 1) >= 0.5;
+  const empty = 10 - full - (hasHalf ? 1 : 0);
+
+  const slots = [
+    ...Array(full).fill('full'),
+    ...(hasHalf ? ['half'] : []),
+    ...Array(empty).fill('empty'),
+  ];
+
   return (
     <div className="dungeon-diff-wrap">
-      <div className="dungeon-diff-label">
-        <img
-          src="https://www.realmeye.com/s/a/img/wiki/i/gKMdCOG.png"
-          alt="Difficulty"
-          className="dungeon-diff-icon"
-          style={{ imageRendering: 'pixelated' }}
-        />
-        <span className="dungeon-diff-value" style={{ color }}>{value} / 10</span>
+      <div className="dungeon-diff-tombs">
+        {slots.map((type, i) => (
+          <img
+            key={i}
+            src={type === 'half' ? TOMB_HALF : TOMB_FULL}
+            alt={type}
+            className={`dungeon-diff-tomb dungeon-diff-tomb--${type}`}
+            style={{ imageRendering: 'pixelated' }}
+          />
+        ))}
       </div>
-      <div className="dungeon-diff-track">
-        <div
-          className="dungeon-diff-fill"
-          style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${color}99, ${color})` }}
-        />
+      <div className="dungeon-diff-number" style={{ color: difficultyColor(value) }}>
+        {value} / 10
       </div>
     </div>
   );
