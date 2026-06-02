@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { CLASSES } from './data/classes.js';
 import { CHALLENGES } from './data/challenges.js';
 import { DUNGEONS } from './data/dungeons.js';
@@ -46,6 +46,11 @@ export default function App() {
   const [isClassSpinning, setIsClassSpinning] = useState(false);
   const [isDungeonSpinning, setIsDungeonSpinning] = useState(false);
   const [isChallengeSpinning, setIsChallengeSpinning] = useState(false);
+
+  useEffect(() => {
+    CLASSES.forEach(c => { new Image().src = `/sprites/${c.name.toLowerCase()}.png`; });
+    DUNGEONS.forEach(d => { new Image().src = `/portals/${d.slug}.png`; });
+  }, []);
 
   const activeClasses = CLASSES.filter((c) => !disabledClasses.includes(c.name));
   const activeDungeons = DUNGEONS.filter((d) => !disabledDungeons.includes(d.slug));
