@@ -400,6 +400,23 @@ export const DUNGEONS = [
       { name: "Esben's Shaman Attire", hash: 'V8pfKqe', shinyHash: 'uBrB6CN', desc: 'A glacial robe worn by the witch doctors of a bygone ice tribe, encased in a layer of permafrost.', effect: '+15 DEF, +60 HP, +6 ATK | 40% chance to Slow nearby enemies 5s on taking damage' },
       { name: "Esben's Wedding Ring", hash: 'hIN9shz', desc: 'A memento of a life long gone — still feel the warmth from years past through the frigid ice.', effect: '+80 HP, +80 MP, +10 ATK, -5 DEF | Reactive: Damaging 1s when shooting while Berserk' },
     ],
+    reds: [
+      // Nordic Knight Set
+      { name: "Dalvar's Battle Axe", hash: 'ol4BPNH', desc: 'Elite Viking warriors and guards were given these great battle axes to use in combat. The mighty Dalvar, strongest of all the Vikings, was known to cut through enemy defenses with this finely balanced weapon.', effect: '205–225 dmg | 120% RoF | Enhances Gjallarhorn synergy | Nordic Knight Set' },
+      { name: 'Sunken Buckler', hash: '3BojTMs', desc: 'Recovered from the wreckage of a Viking ship, this large buckler can strike unlike any other shield.', effect: 'MP: 100 | +10 DEF, +8 SPD, +4 VIT | 165–185 dmg, stuns 2.5s | 10 piercing shots | Nordic Knight Set' },
+      { name: 'Chainmail Body Armor', hash: 'P6WDyFQ', desc: 'Painstakingly forged through an immeasurable amount of iron rings linked together, this armor allows its wearer to remain more agile and flexible than traditional armors.', effect: '+20 DEF, +6 SPD, +6 VIT | Nordic Knight Set' },
+      { name: 'Gjallarhorn', hash: 'vZsjila', desc: 'A ceremonial horn gifted to the Vikings from their ancient gods. Blowing it is said to temporarily bestow to the owner the power of Odin.', effect: '+80 HP, +4 ATK | Proc: Berserk 5s on ability use | Armored 5s when below 50% HP on shoot | Nordic Knight Set' },
+      // Frost Harbinger Set
+      { name: 'Heartsteel Claymore', hash: 'BC8ab8F', desc: 'The harbinger will tread through the Tundra, uncaring of the life that may have ended at the hands of the deepsteel blade.', effect: '325–375 main + 150–200 secondary shots | 60% / 20% RoF | Frost Harbinger Set' },
+      { name: 'Symbol of the Lost', hash: 'Mlhmplw', desc: 'To whom this symbol belonged, and what it may have represented, remains a mystery. It serves as a grim reminder of the world unobserved, cloaked in the endless snow.', effect: 'MP: 100 | +6 DEF, -5 SPD | Summons Frostborn Crystal (9s): 42 AP shots, cold snap slows 7-tile radius | Frost Harbinger Set' },
+      { name: 'Hull of the Tundra', hash: 'USGeKZU', desc: 'The armor from the pitiful resistance was absorbed into this endless deepsteel plate. As the blizzard rages on, the plates grow ever more dense.', effect: '+45 HP, +45 MP, +19 DEF | Summons 250-dmg snowflakes on 25+ damage taken | Frost Harbinger Set' },
+      { name: 'Frozen Heart', hash: 'EKcUIYg', desc: 'In the white wastes, Squall answers no prayers, spares no lives, and grants no solace.', effect: '+32% HP equal to MP, +16% MP equal to HP, -5 SPD | On ability use: boosts ally DEF +9 for 9s | Frost Harbinger Set' },
+      // Frost Advisor Set
+      { name: 'Iceborn Arsenal', hash: 'SJTrMgB', desc: 'The harbinger will tread through the Tundra, uncaring of the life that may have ended at the hands of the deepsteel blade.', effect: 'ST Katana | 54–100 (spinner) + 100–130 (slash) dmg | Piercing, armor-piercing | Frost Advisor Set' },
+      { name: 'Sublimation Sidearm', hash: 'Em6bbdl', desc: "The Harbinger's power was used to sublimate icicles along this blade, sending many sharp projectiles towards potential foes.", effect: 'ST Wakizashi | Escalating combo: 100–150 → 150–200 → 250–300 → 350–400 dmg | +50 HP equip | Frost Advisor Set' },
+      { name: "Retainer's Battlesuit", hash: 'yep6rx1', desc: 'The suit, capable of withstanding the great cold, represented a pact between a mortal and an ever-living elemental being.', effect: '+16 DEF, +7 DEX, -6 VIT | Proc: ATK Boost + DEX Boost 5s on ability use | Frost Advisor Set' },
+      { name: "Legacy's Pendant", hash: '8o6RoCj', desc: 'Perhaps at some point, a man wore this pendant in search of something that humans could possibly offer. As the pendant lost meaning, it became a reminder of what he sought.', effect: '+120% HP equal to DEX, +0.6% DEX equal to Max HP, -6 VIT | Proc: Berserk 3s on 40+ dmg | Frost Advisor Set' },
+    ],
   },
   {
     name: 'Kogbold Steamworks', slug: 'kogbold-steamworks', hash: 'dohicSR', tier: 4, color: '#FF8F00', bg: '#1a1000', exalt: true,
@@ -449,6 +466,10 @@ export const DUNGEONS = [
         desc: 'A well machined object said to give the Kogbolds their strength.',
         effect: 'Forge material — upgrades 7 UT weapons into enhanced versions (Doom Bow, Void Blade, Socket Blade, and more)',
       },
+    ],
+    cyans: [
+      { name: 'Kogbold Inventor Archer Set Shard', hash: 'NByvIQL', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Kogbold Turretsmith Archer Set (craft via Forge)' },
+      { name: 'Kogbold Pyrotechnician Wizard Set Shard', hash: '5sVDNqF', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Kogbold Pyrotechnician Wizard Set (craft via Forge)' },
     ],
   },
 
@@ -501,6 +522,9 @@ export const DUNGEONS = [
         desc: 'Chitin armor fashioned from the exoskeleton of a yellow Beehemoth. Ultra-light and extremely flexible, yet surprisingly tough.',
         effect: '+18 DEF, +5 SPD, +3 DEX | Living Hive proc: releases bees when hit for 40+ dmg (2s CD)',
       },
+    ],
+    cyans: [
+      { name: 'Amber Honeycomb', hash: '9IiTLSS', desc: 'A perfectly preserved honeycomb tainted with a sinister power.', effect: 'Enchanting artifact — 50% consumption rate | Boosts DEX mods ×9 and Living Hive/Buzzing Bullets/Apitoxin awakened mods ×15' },
     ],
   },
   {
@@ -693,6 +717,12 @@ export const DUNGEONS = [
         desc: 'An uncannily heavy iron ball and chain utilized by Murcian himself, burdened by the weight of countless souls that met their fate at the hands of the warden.',
         effect: '-60 HP, +10 DEF, -6 SPD | Boomeranging 1000–1200 dmg shot | Above 99% HP: VIT Down | Below 66% HP: Armored + +10 ATK',
       },
+    ],
+    cyans: [
+      { name: 'Plague Doctor Priest Set Shard', hash: 'sLJvOcV', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Plague Doctor Priest Set | Drops from Griefkeeper Zole and Doctor Lobotomik' },
+      { name: 'Alchemist Assassin Set Shard', hash: 'wDvuAVu', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Alchemist Assassin Set | Drops from Overseer Oculon and Groundskeeper Gretch' },
+      { name: 'Spellbound Soulthief Set Shard', hash: '11MbgxZ', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Spellbound Soulthief Trickster Set | Drops from Soulwarden Murcian' },
+      { name: 'Vial of Soul Extract', hash: '36SfuyX', desc: 'A luminescent vial containing an eerie liquid, extracted through the complete pulverization of a soul.', effect: 'Forge material — upgrades Haunted Cemetery UT items to enhanced versions' },
     ],
   },
   {
@@ -1023,6 +1053,29 @@ export const DUNGEONS = [
         effect: '+140 HP, +5 DEF | Mad God\'s Hubris: +10 DEX while shooting above 90% HP',
       },
     ],
+    reds: [
+      // Shaman Necromancer Set
+      { name: "Shaman's Staff", hash: 'ZbS4u0i', desc: 'A twisted staff adorned with bones and dark charms, said to channel the spirits of fallen shamans.', effect: 'Wisp: 155–180 dmg, 80% RoF | Pierce: 120–140 AP dmg, 55% RoF | Wavy primary shots | Shaman Necromancer Set' },
+      { name: 'Ritual Skull', hash: 'nT3kq3u', desc: 'The skull of an alligator, used to house spirits summoned through wicked rituals.', effect: 'MP: 100 | +4 ATK, +2 DEX | Raises 1 Ritual Undead + ritual circle (225–1650 dmg/s) | 6s CD | Shaman Necromancer Set' },
+      { name: 'Ragged Robes', hash: '1jKG8hb', desc: 'Robes pieced together from coarse, ragged cloth, adorned with decorative bones and cursed trinkets.', effect: '+11 DEF, +3 ATK, +5 DEX | Shaman Necromancer Set' },
+      { name: 'Fang Necklace', hash: 'iU3z5Kn', desc: 'A necklace of fangs stolen from vicious swamp creatures. The predatory strength of the beasts empowers the wearer.', effect: '+4 ATK, +4 DEX, +5 VIT | Blood Offering: grants Berserk to Ritual Circle | Shaman Necromancer Set' },
+      { name: 'Soul Gem Amulet', hash: 'rXuHxFT', desc: 'An amulet housing a powerful soul. It calls out and draws wandering spirits towards the wearer.', effect: '+4 ATK, +4 DEX, +5 VIT | Soul Offering: Ritual Circle inflicts Slowed | Shaman Necromancer Set' },
+      // Mad Minotaur Set
+      { name: 'Fury Flail', hash: 'wcjhwxu', desc: 'Unleash destruction with this brutal flail. Its massive anvil end shatters armor and crushes foes, whispering of an untamed, cataclysmic force.', effect: '300–345 main + 2×55 chain shots | 60% RoF | Inflicts Bleeding 3s | Mad Minotaur Set' },
+      { name: 'Shockwave Shield', hash: 'VO3QpZx', desc: "Imbued with the untamed power of the Mighty Minotaur, this shield leaves a feeling of despair to those unfortunate enough to be in its presence.", effect: 'MP: 100 | +10 DEF | 500 dmg (4-tile range) | Stuns 3s + Slows 3s | Mad Minotaur Set' },
+      { name: 'Cyclone Chestplate', hash: 'vcpasZB', desc: 'This mythical Minotaur chest plate infuses your weapon with a speed that mirrors the guardians of ancient labyrinths, making you the calm yet devastating eye of the cyclone.', effect: '+50 HP, +17 DEF, +4 DEX, +4 VIT | Mad Minotaur Set' },
+      { name: 'Brass Knuckles', hash: 'bTzGnoH', desc: 'Slip on these savage knuckles and unleash a whirlwind of swings, each powered by an uncanny dexterity that leaves foes questioning what hit them.', effect: '+30 HP, +7 DEF, +6 DEX | Mad Minotaur Set' },
+      // Astral Arcanist Set
+      { name: 'Nebular Rod', hash: 'laDuXga', desc: 'A pristine cloud of nebular stardust gently rests atop a focusing rod in a tranquil stasis, until it is catalyzed into a microscopic genesis of stellar proportions.', effect: '140–168 dmg | 75% primary / 21% secondary RoF | Astral Arcanist Set' },
+      { name: 'Cosmic Astrolabe', hash: 'LmcZIBd', desc: 'A glassy projection of arcanic lights provides an accurate chart of the stars beyond the Realm, enabling travel along ley lines of starlight.', effect: 'MP: 180 | Teleport to cursor + Star Fire 185–315 dmg | Curse 4–6.5s + Stasis 5s | Astral Arcanist Set' },
+      { name: "Astronomer's Gown", hash: 'xFAergr', desc: "What was once the simple vestments of an astronomer have become a curtain of stardust and dreams, a priceless record of countless journeys through worlds that may never be visited again.", effect: '+15 DEF, +7 ATK | Proc: Energized 3.6s on ability use (5.6s with Eye of Divination) | Astral Arcanist Set' },
+      { name: 'Eye of Divination', hash: 'fUEyz7a', desc: 'A crystalline formation in the shape of an eye, the sole artifact of a journey whose true purpose was a secret beyond the stars.', effect: '+120% HP equal to ATK, +120% MP equal to ATK | Astral Arcanist Set' },
+    ],
+    cyans: [
+      { name: 'Shaman Necromancer Set Shard', hash: '0lY3QH9', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Shaman Necromancer Set | Drops from Treasurer Gemsbok and Archbishop Leucoryx' },
+      { name: 'Mad Minotaur Set Shard', hash: 'zIHpp8b', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Mad Minotaur Set | Drops from Chancellor Dammah and Chief Beisa' },
+      { name: 'Astral Arcanist Set Shard', hash: '7MTHRqz', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Astral Arcanist Set | Drops from Oryx the Mad God 3' },
+    ],
   },
   {
     name: 'Heroic Undead Lair', slug: 'heroic-undead-lair', hash: 'z4UFKSh', tier: 3, color: '#B0BEC5', bg: '#0e1014',
@@ -1078,6 +1131,10 @@ export const DUNGEONS = [
         desc: 'Equipped with a mechanical combustion technology few may understand, this weapon projects flames boasting temperatures capable of melting targets.',
         effect: '85–125 dmg (×3) | Armor Pierce + Pass Cover | Slow shots — similar to Lumiaire but for Warriors',
       },
+      { name: 'Green Beehemoth Armor', hash: 'PClEmpg', desc: 'Chitin armor fashioned from the exoskeleton of a Green Beehemoth. Ultra-light and extremely flexible, yet surprisingly tough.', effect: '+60 HP, +18 DEF, +5 SPD, -5 VIT | Living Hive proc: releases bees when hit for 40+ dmg (2s CD) | Exclusive to Plagued Nest' },
+    ],
+    cyans: [
+      { name: 'Amber Honeycomb', hash: '9IiTLSS', desc: 'A perfectly preserved honeycomb tainted with a sinister power.', effect: 'Enchanting artifact — 50% consumption rate | Boosts DEX mods ×9 and Living Hive/Buzzing Bullets/Apitoxin awakened mods ×15' },
     ],
   },
   {
@@ -1129,6 +1186,22 @@ export const DUNGEONS = [
         desc: 'A well machined object said to give the Kogbolds their strength.',
         effect: 'Forge material — upgrades 7 UT weapons into enhanced versions (Doom Bow, Void Blade, Socket Blade, and more)',
       },
+    ],
+    reds: [
+      // Kogbold Turretsmith Archer Set
+      { name: 'Experimental Cannon', hash: 'bB3OmG9', desc: 'This firearm was created as an experiment by welding two double-barrelled cannons together. One of the barrels fell off when first fired, but the other three work fine.', effect: '3 shots × 95–115 dmg | Burst of 4, armor-piercing | Gun Turrets fire 2 extra projectiles | +2 SPD | Turretsmith Archer Set' },
+      { name: 'Sentry Turret', hash: 'xsrkxXI', desc: 'Turretsmiths innovate new automated defence measures to help protect the Steamworks, from rapid firing cannons to multiple flails attached to a spinning post.', effect: 'MP: 100 | +5 DEF | Deploys gun turret + spinning flail turrets + heavy cannon (cone pattern), 6s | Turretsmith Archer Set' },
+      { name: "Tinkerer's Apron", hash: 'fSu8aoJ', desc: 'This apron has many pockets containing supplies, pencils, blueprints and plenty of reloads. Each pocket has its own leather pocket protector.', effect: '+80 MP, +16 DEF, +4 SPD | Flail Turrets gain extended chains | Turretsmith Archer Set' },
+      { name: 'Targeting Monocular', hash: 'JsFC1ms', desc: 'Wearing this brass monocle allows a Turretsmith to see down their turret sights, granting greater accuracy at the expense of personal style.', effect: '+50 HP, +8 DEF | Target Analysis: Heavy Turret deals 350–525 dmg, applies Slowed 0.2s every other shot | Turretsmith Archer Set' },
+      // Kogbold Pyrotechnician Wizard Set
+      { name: 'Rocket Launcher', hash: '4PIEZSR', desc: 'Kogbold rockets are highly explosive. The inaccurate nature of the weapon is made up for by the sheer volume of shots launched at once.', effect: '2 shots × 80–95 + 100–120 dmg | 85% RoF | Armor-piercing, piercing | Pyrotechnician Wizard Set' },
+      { name: 'Unstable Firework', hash: 't9KnFI3', desc: 'The Pyrotechnicians often get distracted by the pretty colours of a violently detonating firework. This one is particularly unpredictable.', effect: 'MP: 90 | +3 DEX | 6 barrages of 8 shots (60–90 dmg each, avg 3600 total) | 27 tiles/sec | Pyrotechnician Wizard Set' },
+      { name: 'Blast Proof Robes', hash: 'SnvaFhz', desc: 'You are not a true Pyrotechnician until you can prove your robes can withstand several exploding experiments.', effect: '+70 HP, +10 DEF, +2 DEX | Pyrotechnician Wizard Set' },
+      { name: 'Lucky Grenade', hash: '8vGaqis', desc: 'This grenade was launched from a firework and failed to explode. It will release deadly sparks when shaken violently enough, but until then serves as a potent good-luck charm.', effect: '+75 HP, +5 DEX | High Explosive: fires cone of 150–175 dmg bullets toward cursor when placing Unstable Firework | Pyrotechnician Wizard Set' },
+    ],
+    cyans: [
+      { name: 'Kogbold Inventor Archer Set Shard', hash: 'NByvIQL', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Kogbold Turretsmith Archer Set | Drops from Factory Control Core' },
+      { name: 'Kogbold Pyrotechnician Wizard Set Shard', hash: '5sVDNqF', desc: 'Collect set shards to obtain a forge token and craft Set Tier items.', effect: 'Forge component → Kogbold Pyrotechnician Wizard Set | Drops from Kogbold Flying Machine' },
     ],
   },
 ];
