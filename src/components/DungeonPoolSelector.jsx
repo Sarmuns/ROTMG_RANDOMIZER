@@ -91,11 +91,11 @@ export default function DungeonPoolSelector({ disabledDungeons, setDisabledDunge
                       className={`chip chip-search ${active ? 'chip-active' : 'chip-disabled'} ${d.exalt ? 'chip-exalt' : ''}`}
                       style={active ? { borderColor: d.color, color: d.color, background: d.bg } : {}}
                       onClick={() => openDungeon(d)}
-                      title={`${d.name} — ${tier.label}${d.whites ? ` (${d.whites.length} white bags)` : ''}`}
+                      title={`${d.name} — ${tier.label}${d.whites ? ` (${d.whites.length}W${d.reds ? ` · ${d.reds.length}R` : ''})` : ''}`}
                     >
                       {d.exalt && <span className="chip-exalt-mark">✦</span>}
                       {d.name}
-                      {d.whites && <span className="chip-drops-hint"> · {d.whites.length}W</span>}
+                      {d.whites && <span className="chip-drops-hint"> · {d.whites.length}W{d.reds ? ` · ${d.reds.length}R` : ''}</span>}
                     </button>
                   );
                 })}

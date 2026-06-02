@@ -14,7 +14,18 @@
       "Bash(chromium-cli *)",
       "Bash(curl -s http://localhost:5174)",
       "Bash(gh auth *)",
-      "PowerShell(gh auth *)"
+      "PowerShell(gh auth *)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://www.realmeye.com/s/a/img/wiki/i/3Biywi7.png\" -OutFile \"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\public\\\\favicon.png\" -UseBasicParsing; Write-Output \"Downloaded\")",
+      "PowerShell(Invoke-WebRequest -Uri \"https://www.realmeye.com/s/a/img/wiki/i/JGnMCv2.gif\" -OutFile \"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\public\\\\favicon.gif\" -UseBasicParsing; Write-Output \"Downloaded\")",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\public\\\\favicon.gif\"\\); [System.Text.Encoding]::ASCII.GetString\\($bytes[0..5]\\))",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\public\\\\favicon.gif\"\\); \"Width: $\\([BitConverter]::ToUInt16\\($bytes, 6\\)\\)px | Height: $\\([BitConverter]::ToUInt16\\($bytes, 8\\)\\)px | Size: $\\($bytes.Length\\) bytes\")",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\public\\\\portals\\\\oryx-sanctuary.png\"\\); $w = [BitConverter]::ToUInt32\\([byte[]]@\\($bytes[19],$bytes[18],$bytes[17],$bytes[16]\\),0\\); $h = [BitConverter]::ToUInt32\\([byte[]]@\\($bytes[23],$bytes[22],$bytes[21],$bytes[20]\\),0\\); \"Size: $\\($bytes.Length\\) bytes | ${w}x${h}px\")",
+      "PowerShell(Copy-Item *)",
+      "mcp__plugin_serena_serena__get_symbols_overview",
+      "mcp__plugin_serena_serena__activate_project",
+      "mcp__plugin_serena_serena__initial_instructions",
+      "mcp__plugin_serena_serena__list_dir",
+      "mcp__plugin_serena_serena__find_symbol"
     ]
   }
 }

@@ -718,6 +718,8 @@ export const DUNGEONS = [
         desc: 'The source of power for the Marble Colossus, found within his core. Intended to give life to golems, but benefits the living as well.',
         effect: '+30 HP, +6 ATK, +6 DEF, +6 SPD, +6 DEX | Tied 3rd best DPS ring in the game',
       },
+    ],
+    reds: [
       {
         name: 'Carved Golem Remains', hash: 'i9BwK10',
         desc: 'A makeshift dagger hastily crafted from the debris of a fallen golem. It may be blunt, but it is also very lightweight.',
@@ -853,6 +855,8 @@ export const DUNGEONS = [
         desc: 'As the nameless monarch sat malcontent upon the throne, his ambitions and impiety became one, and with this came enlightenment.',
         effect: '+120 HP, +7 ATK, +7 DEX | Upgrade to Forgotten Crown — 2nd best DPS ring | 9% XP bonus (highest in game)',
       },
+    ],
+    reds: [
       {
         name: 'Corruption Tether', hash: 'WzJqBbb',
         desc: 'This transmogrified crook bolsters the ability to peer into pocket dimensions and cling to the essence within.',

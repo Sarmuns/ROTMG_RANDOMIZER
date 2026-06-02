@@ -99,14 +99,17 @@ export default function DungeonDetailModal({ dungeon, active, onToggle, onClose 
 
         <ExaltRow slug={dungeon.slug} />
 
-        {dungeon.whites && (
-          <div className="dungeon-detail-whites-hint">
-            <span className="whites-count">{dungeon.whites.length} white bag{dungeon.whites.length !== 1 ? 's' : ''}</span>
-            <button className="btn-whites" onClick={() => setShowWhites(true)}>
-              White Bags
-            </button>
-          </div>
-        )}
+        {(dungeon.whites || dungeon.reds || dungeon.oranges || dungeon.cyans) && (() => {
+          const total = (dungeon.whites?.length ?? 0) + (dungeon.reds?.length ?? 0) + (dungeon.oranges?.length ?? 0) + (dungeon.cyans?.length ?? 0);
+          return (
+            <div className="dungeon-detail-whites-hint">
+              <span className="whites-count">{total} drop{total !== 1 ? 's' : ''}</span>
+              <button className="btn-whites" onClick={() => setShowWhites(true)}>
+                View Loot
+              </button>
+            </div>
+          );
+        })()}
 
         <div className="dungeon-detail-actions">
           <button

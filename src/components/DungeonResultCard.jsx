@@ -30,9 +30,9 @@ export default function DungeonResultCard({ dungeon, spinning }) {
           {TIER_META[dungeon.tier].label}
         </div>
       )}
-      {revealed && dungeon.whites && (
+      {revealed && (dungeon.whites || dungeon.reds || dungeon.oranges || dungeon.cyans) && (
         <button className="btn-whites" onClick={() => setShowWhites(true)}>
-          White Bags
+          View Loot
         </button>
       )}
       {showWhites && <WhiteBagModal dungeon={dungeon} onClose={() => setShowWhites(false)} />}
