@@ -1194,3 +1194,39 @@ export const DUNGEON_DIFFICULTY = {
   'the-shatters':                  10,
   'oryx-sanctuary':                9.5,
 };
+
+// Source: RealmEye wiki exaltation page
+const W = 'https://www.realmeye.com/s/a/img/wiki/i/';
+export const EXALT_ICONS = {
+  Life:       W + 'E7fAk0D.png',
+  Mana:       W + 'KtbJvSr.png',
+  Attack:     W + 'mGdE04P.png',
+  Defense:    W + 'tBkJPkc.png',
+  Speed:      W + 'Y6jFh6e.png',
+  Dexterity:  W + 'bek1jrl.png',
+  Vitality:   W + '0waaxFx.png',
+  Wisdom:     W + 'dy9u9k4.png',
+};
+
+// Which exalt(s) each dungeon grants
+export const DUNGEON_EXALTS = {
+  'oryx-sanctuary':      ['Life'],
+  'the-shatters':        ['Life', 'Mana', 'Attack'],
+  'moonlight-village':   ['Life', 'Mana', 'Attack'],
+  'the-void':            ['Mana'],
+  'lost-halls':          ['Defense'],
+  'cultist-hideout':     ['Speed'],
+  'spectral-penitentiary': ['Attack'],
+  'ice-citadel':         ['Speed'],
+  'the-nest':            ['Dexterity'],
+  'plagued-nest':        ['Dexterity'],
+  'kogbold-steamworks':  ['Vitality'],
+  'advanced-kogbold':    ['Vitality'],
+  'fungal-cavern':       ['Wisdom'],
+  'crystal-cavern':      ['Wisdom'],
+};
+
+// Small 8×8 portal icons used in the exaltation UI
+export const EXALT_PORTAL_ICONS = {
+  'oryx-sanctuary':      W + '0QgqbHI.png',
+};

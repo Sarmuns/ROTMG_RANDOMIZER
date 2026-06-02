@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import DungeonSprite from './DungeonSprite.jsx';
+import WhiteBagModal from './WhiteBagModal.jsx';
+import ModalBox from './ModalBox.jsx';
+import { TIER_META, DUNGEON_DIFFICULTY, DUNGEON_EXALTS, EXALT_ICONS } from '../data/dungeons.js';
 
 function difficultyColor(v) {
-  if (v <= 2)  return '#4ade80';
-  if (v <= 4)  return '#a3e635';
+  if (v <= 2)   return '#4ade80';
+  if (v <= 4)   return '#a3e635';
   if (v <= 5.5) return '#fbbf24';
-  if (v <= 7)  return '#f97316';
+  if (v <= 7)   return '#f97316';
   if (v <= 8.5) return '#ef4444';
   return '#c026d3';
 }
@@ -14,11 +17,10 @@ const TOMB_FULL = 'https://www.realmeye.com/s/a/img/wiki/i/gKMdCOG.png';
 const TOMB_HALF = 'https://www.realmeye.com/s/a/img/wiki/i/4tJF9j9.png';
 
 function DifficultyBar({ value }) {
-  const full  = Math.floor(value);
+  const full    = Math.floor(value);
   const hasHalf = (value % 1) >= 0.5;
-  const empty = 10 - full - (hasHalf ? 1 : 0);
-
-  const slots = [
+  const empty   = 10 - full - (hasHalf ? 1 : 0);
+  const slots   = [
     ...Array(full).fill('full'),
     ...(hasHalf ? ['half'] : []),
     ...Array(empty).fill('empty'),
@@ -43,13 +45,33 @@ function DifficultyBar({ value }) {
     </div>
   );
 }
-import WhiteBagModal from './WhiteBagModal.jsx';
-import ModalBox from './ModalBox.jsx';
-import { TIER_META, DUNGEON_DIFFICULTY } from '../data/dungeons.js';
+
+function ExaltRow({ slug }) {
+  const exalts = DUNGEON_EXALTS[slug];
+  if (!exalts) return null;
+  return (
+    <div className="dungeon-exalt-row">
+      <span className="dungeon-exalt-label">Exaltations</span>
+      <div className="dungeon-exalt-flags">
+        {exalts.map((stat) => (
+          <div key={stat} className="dungeon-exalt-flag" title={stat}>
+            <img
+              src={EXALT_ICONS[stat]}
+              alt={stat}
+              className="exalt-flag-img"
+              style={{ imageRendering: 'pixelated' }}
+            />
+            <span className="exalt-flag-label">{stat}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function DungeonDetailModal({ dungeon, active, onToggle, onClose }) {
   const [showWhites, setShowWhites] = useState(false);
-  const tier = TIER_META[dungeon.tier];
+  const tier       = TIER_META[dungeon.tier];
   const difficulty = DUNGEON_DIFFICULTY[dungeon.slug];
 
   return (
@@ -74,6 +96,8 @@ export default function DungeonDetailModal({ dungeon, active, onToggle, onClose 
             {active ? 'Active' : 'Disabled'}
           </span>
         </div>
+
+        <ExaltRow slug={dungeon.slug} />
 
         {dungeon.whites && (
           <div className="dungeon-detail-whites-hint">
