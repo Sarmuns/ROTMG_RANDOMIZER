@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ModalBox from './ModalBox.jsx';
 import ItemDetailModal from './ItemDetailModal.jsx';
 
-const BASE = 'https://www.realmeye.com/s/a/img/wiki/i/';
+const BASE = '/items/';
 
 const BAG_TYPES = [
   { key: 'whites',  label: 'White Bags',  color: '#E0E0E0', bg: '#ffffff12', border: '#ffffff30' },

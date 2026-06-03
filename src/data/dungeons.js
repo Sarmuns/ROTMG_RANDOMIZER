@@ -1272,17 +1272,15 @@ export const DUNGEON_DIFFICULTY = {
   'oryx-sanctuary':                9.5,
 };
 
-// Source: RealmEye wiki exaltation page
-const W = 'https://www.realmeye.com/s/a/img/wiki/i/';
 export const EXALT_ICONS = {
-  Life:       W + 'E7fAk0D.png',
-  Mana:       W + 'KtbJvSr.png',
-  Attack:     W + 'mGdE04P.png',
-  Defense:    W + 'tBkJPkc.png',
-  Speed:      W + 'Y6jFh6e.png',
-  Dexterity:  W + 'bek1jrl.png',
-  Vitality:   W + '0waaxFx.png',
-  Wisdom:     W + 'dy9u9k4.png',
+  Life:       '/icons/E7fAk0D.png',
+  Mana:       '/icons/KtbJvSr.png',
+  Attack:     '/icons/mGdE04P.png',
+  Defense:    '/icons/tBkJPkc.png',
+  Speed:      '/icons/Y6jFh6e.png',
+  Dexterity:  '/icons/bek1jrl.png',
+  Vitality:   '/icons/0waaxFx.png',
+  Wisdom:     '/icons/dy9u9k4.png',
 };
 
 // Which exalt(s) each dungeon grants
@@ -1305,5 +1303,5 @@ export const DUNGEON_EXALTS = {
 
 // Small 8×8 portal icons used in the exaltation UI
 export const EXALT_PORTAL_ICONS = {
-  'oryx-sanctuary':      W + '0QgqbHI.png',
+  'oryx-sanctuary':      '/icons/0QgqbHI.png',
 };

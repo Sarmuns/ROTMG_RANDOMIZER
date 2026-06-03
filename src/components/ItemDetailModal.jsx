@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ModalBox from './ModalBox.jsx';
 
-const BASE = 'https://www.realmeye.com/s/a/img/wiki/i/';
-const WHITE_BAG_ICON = BASE + 'shULFwv.png';
-const FAME_ICON      = BASE + 'gKMdCOG.png'; // tombstone = fame/XP icon
+const BASE = '/items/';
+const WHITE_BAG_ICON = '/icons/shULFwv.png';
+const FAME_ICON      = '/icons/gKMdCOG.png';
 
 function ItemSprite({ hash, label, size = 96 }) {
   const [err, setErr] = useState(false);

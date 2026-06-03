@@ -13,8 +13,8 @@ function difficultyColor(v) {
   return '#c026d3';
 }
 
-const TOMB_FULL = 'https://www.realmeye.com/s/a/img/wiki/i/gKMdCOG.png';
-const TOMB_HALF = 'https://www.realmeye.com/s/a/img/wiki/i/4tJF9j9.png';
+const TOMB_FULL = '/icons/gKMdCOG.png';
+const TOMB_HALF = '/icons/4tJF9j9.png';
 
 function DifficultyBar({ value }) {
   const full    = Math.floor(value);

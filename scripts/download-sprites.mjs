@@ -1,79 +1,109 @@
-import https from 'https';
+/**
+ * Downloads all RealmEye sprite assets used in dungeons.js and components.
+ * Run once: node scripts/download-sprites.mjs
+ *
+ * Outputs:
+ *   public/items/<hash>.png   — dungeon loot item sprites
+ *   public/icons/<hash>.png   — fixed UI sprites (tombstones, exalt stats, bag icon)
+ */
+
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = path.join(__dirname, '..', 'public', 'sprites');
+const ROOT = path.resolve(__dirname, '..');
+const DUNGEON_FILE = path.join(ROOT, 'src', 'data', 'dungeons.js');
 
-const SPRITES = [
-  { name: 'rogue',       hash: 'hgiU2hA' },
-  { name: 'archer',      hash: 'OrNGRgy' },
-  { name: 'wizard',      hash: 'QAtKJFt' },
-  { name: 'priest',      hash: 'MPcn792' },
-  { name: 'warrior',     hash: 'It4sclp' },
-  { name: 'knight',      hash: 'snm8oKO' },
-  { name: 'paladin',     hash: 'caT4rO5' },
-  { name: 'assassin',    hash: 'Xy1Lqha' },
-  { name: 'necromancer', hash: 'pmOEcsZ' },
-  { name: 'huntress',    hash: 'tylzyyE' },
-  { name: 'mystic',      hash: 'bksjGPk' },
-  { name: 'trickster',   hash: 'E66uyda' },
-  { name: 'sorcerer',    hash: 'dzsmUSA' },
-  { name: 'ninja',       hash: 'WS5AQZ7' },
-  { name: 'samurai',     hash: 'be8agu7' },
-  { name: 'bard',        hash: 'h5Os4xa' },
-  { name: 'summoner',    hash: '4QnFwS9' },
-  { name: 'kensei',      hash: 'L48PGQT' },
-  { name: 'druid',       hash: '6miC182' },
+const BASE_URL = 'https://www.realmeye.com/s/a/img/wiki/i/';
+const ITEMS_DIR = path.join(ROOT, 'public', 'items');
+const ICONS_DIR = path.join(ROOT, 'public', 'icons');
+
+// Fixed sprites used in components (not from dungeon item data)
+const FIXED_ICONS = [
+  'gKMdCOG', // tombstone full (difficulty + fame icon)
+  '4tJF9j9', // tombstone half
+  'shULFwv', // white bag icon
+  'E7fAk0D', // exalt: Life
+  'KtbJvSr', // exalt: Mana
+  'mGdE04P', // exalt: Attack
+  'tBkJPkc', // exalt: Defense
+  'Y6jFh6e', // exalt: Speed
+  'bek1jrl', // exalt: Dexterity
+  '0waaxFx', // exalt: Vitality
+  'dy9u9k4', // exalt: Wisdom
+  '0QgqbHI', // exalt portal: Oryx Sanctuary
 ];
 
-function download(url, dest) {
+function extractHashes(source) {
+  const hashes = new Set();
+  const pattern = /(?:hash|shinyHash):\s*'([A-Za-z0-9]+)'/g;
+  let m;
+  while ((m = pattern.exec(source)) !== null) {
+    hashes.add(m[1]);
+  }
+  return [...hashes];
+}
+
+function download(hash, destDir) {
   return new Promise((resolve, reject) => {
+    const dest = path.join(destDir, `${hash}.png`);
+    if (fs.existsSync(dest)) {
+      process.stdout.write('.');
+      return resolve({ hash, skipped: true });
+    }
+    const url = BASE_URL + hash + '.png';
     const file = fs.createWriteStream(dest);
-    const req = https.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Referer': 'https://www.realmeye.com/',
-      },
-    }, (res) => {
-      if (res.statusCode === 301 || res.statusCode === 302) {
-        file.close();
-        fs.unlink(dest, () => {});
-        return download(res.headers.location, dest).then(resolve).catch(reject);
-      }
+    https.get(url, (res) => {
       if (res.statusCode !== 200) {
         file.close();
-        fs.unlink(dest, () => {});
-        return reject(new Error(`HTTP ${res.statusCode}`));
+        fs.unlinkSync(dest);
+        return reject(new Error(`HTTP ${res.statusCode} for ${hash}`));
       }
       res.pipe(file);
-      file.on('finish', () => file.close(resolve));
-    });
-    req.on('error', (err) => {
-      fs.unlink(dest, () => {});
+      file.on('finish', () => {
+        file.close();
+        process.stdout.write('+');
+        resolve({ hash, skipped: false });
+      });
+    }).on('error', (err) => {
+      file.close();
+      if (fs.existsSync(dest)) fs.unlinkSync(dest);
       reject(err);
     });
   });
 }
 
-async function main() {
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-
-  for (const { name, hash } of SPRITES) {
-    const url = `https://www.realmeye.com/s/a/img/wiki/i/${hash}.png`;
-    const dest = path.join(OUT_DIR, `${name}.png`);
-    process.stdout.write(`Downloading ${name}... `);
-    try {
-      await download(url, dest);
-      const size = fs.statSync(dest).size;
-      console.log(`OK (${size} bytes)`);
-    } catch (err) {
-      console.log(`FAILED: ${err.message}`);
+async function downloadBatch(hashes, destDir, label) {
+  console.log(`\n[${label}] ${hashes.length} sprites — legend: + downloaded  . skipped`);
+  const CONCURRENCY = 8;
+  let ok = 0, skip = 0, fail = 0;
+  for (let i = 0; i < hashes.length; i += CONCURRENCY) {
+    const batch = hashes.slice(i, i + CONCURRENCY);
+    const results = await Promise.allSettled(batch.map(h => download(h, destDir)));
+    for (const r of results) {
+      if (r.status === 'fulfilled') {
+        r.value.skipped ? skip++ : ok++;
+      } else {
+        console.error(`\nFAIL: ${r.reason.message}`);
+        fail++;
+      }
     }
   }
-
-  console.log('\nDone! Check public/sprites/');
+  console.log(`\n  done — ${ok} downloaded, ${skip} skipped, ${fail} failed`);
 }
 
-main();
+async function main() {
+  const source = fs.readFileSync(DUNGEON_FILE, 'utf8');
+  const itemHashes = extractHashes(source);
+  console.log(`Found ${itemHashes.length} unique item/shiny hashes in dungeons.js`);
+  console.log(`Fixed icon sprites: ${FIXED_ICONS.length}`);
+
+  await downloadBatch(FIXED_ICONS, ICONS_DIR, 'icons');
+  await downloadBatch(itemHashes, ITEMS_DIR, 'items');
+
+  console.log('\nAll done. Next step: update src/ to use /items/ and /icons/ paths.');
+}
+
+main().catch(e => { console.error(e); process.exit(1); });
