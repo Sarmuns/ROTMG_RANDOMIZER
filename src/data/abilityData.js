@@ -1,0 +1,431 @@
+// Ability data for the DPS simulator — organized by abilityType.
+// hash: RealmEye wiki sprite hash → /items/<hash>.png
+// type: 'damage' | 'buff' | 'none'
+// For 'damage': damagePerUse (avg total per cast), cooldown (s), armorPierce
+// For 'buff':   dmgMult (weapon damage multiplier while active), duration (s), cooldown (s)
+// DPS values are approximate T6/T7 estimates; adjust per-tier where noted.
+
+// ── Helm (Warrior) ───────────────────────────────────────────
+export const helm = [
+  { id: 'helm-t0', name: 'Combat Helm',              tier: 'T0', hash: 'y23fV83', type: 'buff', dmgMult: 1.06, duration: 2.5, cooldown: 6 },
+  { id: 'helm-t1', name: 'Bronze Helm',              tier: 'T1', hash: 'jRRrMof', type: 'buff', dmgMult: 1.08, duration: 3,   cooldown: 6 },
+  { id: 'helm-t2', name: 'Black Iron Helm',          tier: 'T2', hash: 'iYNCa95', type: 'buff', dmgMult: 1.10, duration: 3.5, cooldown: 6 },
+  { id: 'helm-t3', name: 'Red Iron Helm',            tier: 'T3', hash: 'p7jOh2O', type: 'buff', dmgMult: 1.13, duration: 4,   cooldown: 6 },
+  { id: 'helm-t4', name: 'Steel Helm',               tier: 'T4', hash: 'AUTLnFS', type: 'buff', dmgMult: 1.16, duration: 4.5, cooldown: 6 },
+  { id: 'helm-t5', name: 'Golden Helm',              tier: 'T5', hash: 'vyWyX1b', type: 'buff', dmgMult: 1.19, duration: 5,   cooldown: 5 },
+  { id: 'helm-t6', name: 'Helm of the Great General',tier: 'T6', hash: 'vzrYC5J', type: 'buff', dmgMult: 1.22, duration: 5,   cooldown: 5 },
+  { id: 'helm-t7', name: 'Helm of the Tribune',      tier: 'T7', hash: '8P8pY5c', type: 'buff', dmgMult: 1.25, duration: 5,   cooldown: 5 },
+  { id: 'helm-jugg',      name: 'Helm of the Juggernaut', tier: 'UT', hash: '9ZwaB2b', type: 'buff', dmgMult: 1.30, duration: 6, cooldown: 4 },
+  { id: 'helm-exalted',   name: 'Helm of Exalted Might',  tier: 'UT', hash: 'vW9Hygc', type: 'buff', dmgMult: 1.28, duration: 5, cooldown: 4 },
+  { id: 'helm-hivemaster',name: 'Hivemaster Helm',         tier: 'UT', hash: 'rlxhfqA', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 5 },
+  { id: 'helm-adamantine',name: 'Adamantine Helm',          tier: 'UT', hash: 'C3ZF6hy', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'helm-challenger', name: 'Challenger Helm',         tier: 'UT', hash: '4MA63Y1', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 5 },
+  { id: 'helm-vanguard',  name: "Vanguard's Visage",        tier: 'UT', hash: 'WVxIOvi', type: 'buff', dmgMult: 1.28, duration: 5, cooldown: 4 },
+  { id: 'helm-pathfinder',name: "Pathfinder's Helm",        tier: 'UT', hash: 'ePNBUbG', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'helm-burlap',    name: 'Burlap Cowl',              tier: 'ST', hash: 'fiBPxFG', type: 'buff', dmgMult: 1.20, duration: 5, cooldown: 5 },
+  { id: 'helm-draconic',  name: 'Helm of Draconic Dominance',tier:'ST', hash: '8celSNb', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 5 },
+  { id: 'helm-tricorne',  name: 'Tricorne of the High Seas', tier: 'ST', hash: '6UiNnNB', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+];
+
+// ── Shield (Knight) ──────────────────────────────────────────
+export const shield = [
+  { id: 'shield-t0', name: 'Wooden Shield',          tier: 'T0', hash: 'WionXcK', type: 'none' },
+  { id: 'shield-t1', name: 'Iron Shield',             tier: 'T1', hash: 'adoRynl', type: 'none' },
+  { id: 'shield-t2', name: 'Steel Shield',            tier: 'T2', hash: 'r9jUoXK', type: 'none' },
+  { id: 'shield-t3', name: 'Reinforced Shield',       tier: 'T3', hash: 'RbWYKQw', type: 'none' },
+  { id: 'shield-t4', name: 'Golden Shield',           tier: 'T4', hash: 'JDli6fk', type: 'none' },
+  { id: 'shield-t5', name: 'Mithril Shield',          tier: 'T5', hash: 'G5DefCI', type: 'none' },
+  { id: 'shield-t6', name: 'Colossus Shield',         tier: 'T6', hash: 'vuTH2fe', type: 'none' },
+  { id: 'shield-t7', name: 'Shield of Orcish Regalia',tier: 'T7', hash: 'HsAcTP5', type: 'none' },
+  { id: 'shield-ogmur',   name: 'Shield of Ogmur',        tier: 'UT', hash: 'zFNntHD', type: 'none' },
+  { id: 'shield-snakeskin',name: 'Snakeskin Shield',       tier: 'UT', hash: '8VEf4qa', type: 'none' },
+  { id: 'shield-pogmur',  name: 'Shield of Pogmur',        tier: 'UT', hash: 'gQVxfv5', type: 'none' },
+  { id: 'shield-brutal',  name: 'Brutal Buckler',          tier: 'UT', hash: 'snSEn5r', type: 'none' },
+  { id: 'shield-spiteful',name: 'Spiteful Scutum',         tier: 'UT', hash: 'KEutUgQ', type: 'none' },
+  { id: 'shield-crystal', name: 'Crystal Shield',          tier: 'UT', hash: 'gct7LFi', type: 'none' },
+  { id: 'shield-cavalary',name: 'Cavalry Lance',            tier: 'UT', hash: 'me0BdyD', type: 'none' },
+  { id: 'shield-escutcheon',name: "Oryx's Escutcheon",     tier: 'UT', hash: 'oyL9xSt', type: 'none' },
+  { id: 'shield-jawgmur', name: 'Shield of Jawgmur',       tier: 'UT', hash: 'SCDzksA', type: 'none' },
+  { id: 'shield-dragon',  name: 'Dragon Slayer',            tier: 'UT', hash: 'RBxfpwE', type: 'none' },
+  { id: 'shield-esoteric',name: 'Esoteric Buckler',         tier: 'UT', hash: 'H5UxTMM', type: 'none' },
+  { id: 'shield-sunken',  name: 'Sunken Buckler',           tier: 'ST', hash: '3BojTMs', type: 'none' },
+  { id: 'shield-shockwave',name: 'Shockwave Shield',        tier: 'ST', hash: 'VO3QpZx', type: 'none' },
+  { id: 'shield-champion',name: "Champion's Bastion",       tier: 'ST', hash: 'iFgXzP9', type: 'none' },
+];
+
+// ── Seal (Paladin) ───────────────────────────────────────────
+export const seal = [
+  { id: 'seal-t0', name: 'Seal of the Initiate',      tier: 'T0', hash: 'jYoZFvx', type: 'buff', dmgMult: 1.05, duration: 3, cooldown: 6 },
+  { id: 'seal-t1', name: 'Seal of the Pilgrim',       tier: 'T1', hash: 'TedQ5FT', type: 'buff', dmgMult: 1.07, duration: 3.5, cooldown: 6 },
+  { id: 'seal-t2', name: 'Seal of the Seeker',        tier: 'T2', hash: 'EoTkHWV', type: 'buff', dmgMult: 1.09, duration: 4, cooldown: 6 },
+  { id: 'seal-t3', name: 'Seal of the Aspirant',      tier: 'T3', hash: 'Akq1Xjm', type: 'buff', dmgMult: 1.12, duration: 4, cooldown: 5 },
+  { id: 'seal-t4', name: 'Seal of the Divine',        tier: 'T4', hash: 'aFrkfEy', type: 'buff', dmgMult: 1.15, duration: 4.5, cooldown: 5 },
+  { id: 'seal-t5', name: 'Seal of the Holy Warrior',  tier: 'T5', hash: 'zD4KcQ8', type: 'buff', dmgMult: 1.18, duration: 5, cooldown: 5 },
+  { id: 'seal-t6', name: 'Seal of the Blessed Champion',tier:'T6',hash: 'xRGtewS', type: 'buff', dmgMult: 1.20, duration: 5, cooldown: 5 },
+  { id: 'seal-t7', name: 'Seal of Invocation',        tier: 'T7', hash: 'QC6f0pP', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'seal-eternal',   name: 'Seal of Eternal Life',     tier: 'UT', hash: 'pwRTsoW', type: 'buff', dmgMult: 1.18, duration: 5, cooldown: 5 },
+  { id: 'seal-battle',    name: 'Seal of the Battle God',   tier: 'UT', hash: 'rpYgiBQ', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 5 },
+  { id: 'seal-blasphemous',name: 'Seal of Blasphemous Prayer',tier:'UT',hash: 'YxQsMy1', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 4 },
+  { id: 'seal-marble',    name: 'Marble Seal',               tier: 'UT', hash: 'Hq1NeMV', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'seal-doom',      name: "Doom's Emblem",             tier: 'UT', hash: 'pf0121W', type: 'buff', dmgMult: 1.28, duration: 4, cooldown: 4 },
+  { id: 'seal-sandstone', name: 'Sandstone Seal',            tier: 'UT', hash: 'Uvdalnc', type: 'buff', dmgMult: 1.20, duration: 5, cooldown: 5 },
+  { id: 'seal-scholar',   name: "Scholar's Seal",            tier: 'UT', hash: 'YLj6XLl', type: 'buff', dmgMult: 1.20, duration: 5, cooldown: 5 },
+  { id: 'seal-forest',    name: 'Seal of the Enchanted Forest',tier:'ST',hash: 'qP0R62n', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'seal-abyssal',   name: 'Abyssal Insignia',          tier: 'ST', hash: 'baSR0zT', type: 'buff', dmgMult: 1.22, duration: 5, cooldown: 5 },
+  { id: 'seal-sacrilege', name: 'Sacrilege Seal',            tier: 'ST', hash: '0acFZlA', type: 'buff', dmgMult: 1.25, duration: 5, cooldown: 4 },
+];
+
+// ── Spell (Wizard) ───────────────────────────────────────────
+export const spell = [
+  { id: 'spell-t0', name: 'Fire Spray Spell',          tier: 'T0', hash: 'PRhxiRI', type: 'damage', damagePerUse: 100, cooldown: 5, armorPierce: true },
+  { id: 'spell-t1', name: 'Flame Burst Spell',         tier: 'T1', hash: 'bmiCSD0', type: 'damage', damagePerUse: 180, cooldown: 5, armorPierce: true },
+  { id: 'spell-t2', name: 'Fire Nova Spell',           tier: 'T2', hash: 'yW8ww7i', type: 'damage', damagePerUse: 280, cooldown: 5, armorPierce: true },
+  { id: 'spell-t3', name: 'Scorching Blast Spell',     tier: 'T3', hash: 'xKu6Js3', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: true },
+  { id: 'spell-t4', name: 'Destruction Sphere Spell',  tier: 'T4', hash: 'YnU6niN', type: 'damage', damagePerUse: 500, cooldown: 5, armorPierce: true },
+  { id: 'spell-t5', name: 'Magic Nova Spell',          tier: 'T5', hash: 'gmLqrBK', type: 'damage', damagePerUse: 640, cooldown: 5, armorPierce: true },
+  { id: 'spell-t6', name: 'Elemental Detonation Spell',tier: 'T6', hash: 'gGXWCi9', type: 'damage', damagePerUse: 800, cooldown: 5, armorPierce: true },
+  { id: 'spell-t7', name: 'Burning Retribution Spell', tier: 'T7', hash: 'SiQ5Wy5', type: 'damage', damagePerUse: 950, cooldown: 5, armorPierce: true },
+  { id: 'spell-wandering', name: 'Wandering Souls Spell',  tier: 'UT', hash: 'oggehEg', type: 'damage', damagePerUse: 700,  cooldown: 5, armorPierce: true },
+  { id: 'spell-jade',      name: 'Jade Storm',             tier: 'UT', hash: 'w8lcI3O', type: 'damage', damagePerUse: 850,  cooldown: 5, armorPierce: true },
+  { id: 'spell-cursed',    name: 'Cursed Spire Spell',     tier: 'UT', hash: 'FQTgblm', type: 'damage', damagePerUse: 800,  cooldown: 5, armorPierce: true },
+  { id: 'spell-genesis',   name: 'Genesis Spell',          tier: 'UT', hash: '7ZsEjTv', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'spell-esben',     name: "Esben's Vows",           tier: 'UT', hash: 'es4f5XM', type: 'damage', damagePerUse: 800,  cooldown: 5, armorPierce: true },
+  { id: 'spell-thousand',  name: 'Thousand Suns Spell',    tier: 'UT', hash: '2nZ8zhj', type: 'damage', damagePerUse: 1000, cooldown: 5, armorPierce: true },
+  { id: 'spell-recurring', name: 'Recurring Terror Spell', tier: 'UT', hash: 'zi9K9k1', type: 'damage', damagePerUse: 850,  cooldown: 5, armorPierce: true },
+  { id: 'spell-penetrating',name: 'Penetrating Blast Spell',tier:'UT', hash: 'xR9fw8E', type: 'damage', damagePerUse: 880,  cooldown: 5, armorPierce: true },
+  { id: 'spell-tablet',    name: "Tablet of the King's Avatar", tier: 'UT', hash: 'aK1DMOZ', type: 'damage', damagePerUse: 920, cooldown: 5, armorPierce: true },
+  { id: 'spell-sporous',   name: 'Sporous Spray Spell',    tier: 'UT', hash: 'CZeEv4c', type: 'damage', damagePerUse: 850,  cooldown: 5, armorPierce: true },
+  { id: 'spell-runes',     name: 'Runes of Knowledge',     tier: 'UT', hash: '1Ir95ME', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'spell-slurpian',  name: 'Slurpian Sea Scroll',    tier: 'ST', hash: 'KlDkOoi', type: 'damage', damagePerUse: 850,  cooldown: 5, armorPierce: true },
+  { id: 'spell-ancient',   name: 'Ancient Eminence',       tier: 'ST', hash: 'w1rJnK9', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'spell-firework',  name: 'Unstable Firework',      tier: 'ST', hash: 't9KnFI3', type: 'damage', damagePerUse: 880,  cooldown: 5, armorPierce: true },
+  { id: 'spell-depth',     name: 'Depth Charge',           tier: 'ST', hash: 'pZk3Ema', type: 'damage', damagePerUse: 880,  cooldown: 5, armorPierce: true },
+];
+
+// ── Skull (Necromancer) ──────────────────────────────────────
+export const skull = [
+  { id: 'skull-t0', name: 'Necrotic Skull',    tier: 'T0', hash: 'uCLuH75', type: 'damage', damagePerUse: 80,  cooldown: 6, armorPierce: false },
+  { id: 'skull-t1', name: 'Breathtaker Skull', tier: 'T1', hash: 'PNf4pIa', type: 'damage', damagePerUse: 130, cooldown: 6, armorPierce: false },
+  { id: 'skull-t2', name: 'Heartstealer Skull',tier: 'T2', hash: 'VlOXpxq', type: 'damage', damagePerUse: 180, cooldown: 6, armorPierce: false },
+  { id: 'skull-t3', name: 'Soul Siphon Skull', tier: 'T3', hash: 'X0ZIfEp', type: 'damage', damagePerUse: 230, cooldown: 6, armorPierce: false },
+  { id: 'skull-t4', name: 'Essence Tap Skull', tier: 'T4', hash: 'xiDxQBA', type: 'damage', damagePerUse: 280, cooldown: 6, armorPierce: false },
+  { id: 'skull-t5', name: 'Lifedrinker Skull', tier: 'T5', hash: '5RBuR5y', type: 'damage', damagePerUse: 330, cooldown: 6, armorPierce: false },
+  { id: 'skull-t6', name: 'Bloodsucker Skull', tier: 'T6', hash: 'WvCtWYR', type: 'damage', damagePerUse: 380, cooldown: 6, armorPierce: false },
+  { id: 'skull-t7', name: 'Mindwaster Skull',  tier: 'T7', hash: 'u4AT7VV', type: 'damage', damagePerUse: 430, cooldown: 6, armorPierce: false },
+  { id: 'skull-cracked',  name: 'Cracked Crystal Skull',    tier: 'UT', hash: 'E4DjT7x', type: 'damage', damagePerUse: 350, cooldown: 6, armorPierce: false },
+  { id: 'skull-sealed',   name: 'Sealed Crystal Skull',     tier: 'UT', hash: 'gRjcZBA', type: 'damage', damagePerUse: 400, cooldown: 6, armorPierce: false },
+  { id: 'skull-demon',    name: "Demon Lord's Skull",       tier: 'UT', hash: 'Kqp1Cdz', type: 'damage', damagePerUse: 420, cooldown: 6, armorPierce: false },
+  { id: 'skull-esben',    name: 'Skullish Remains of Esben',tier: 'UT', hash: 'Ytpddcl', type: 'damage', damagePerUse: 400, cooldown: 6, armorPierce: false },
+  { id: 'skull-endless',  name: 'Skull of Endless Torment', tier: 'UT', hash: 'XSUsjgZ', type: 'damage', damagePerUse: 430, cooldown: 6, armorPierce: false },
+  { id: 'skull-corrupted',name: 'Skull of Corrupted Souls', tier: 'UT', hash: 'wXEiGHE', type: 'damage', damagePerUse: 420, cooldown: 6, armorPierce: false },
+  { id: 'skull-perennial',name: 'Perennial Cranium',        tier: 'UT', hash: 'SHy3DA5', type: 'damage', damagePerUse: 440, cooldown: 6, armorPierce: false },
+  { id: 'skull-maw',      name: 'Maw of Malignance',        tier: 'UT', hash: 'ivmU6yl', type: 'damage', damagePerUse: 450, cooldown: 6, armorPierce: false },
+  { id: 'skull-epiphany', name: 'Epiphany Skull',           tier: 'UT', hash: 'aYwkLwA', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'skull-restless', name: 'Skull of Restless Souls',  tier: 'UT', hash: 'ctgIxCX', type: 'damage', damagePerUse: 430, cooldown: 6, armorPierce: false },
+  { id: 'skull-ritual',   name: 'Ritual Skull',             tier: 'ST', hash: 'nT3kq3u', type: 'damage', damagePerUse: 420, cooldown: 6, armorPierce: false },
+  { id: 'skull-memento',  name: 'Memento Mori',             tier: 'ST', hash: 'sI7HjoW', type: 'damage', damagePerUse: 430, cooldown: 6, armorPierce: false },
+  { id: 'skull-blood',    name: 'Blood Essence',            tier: 'ST', hash: 'KNjezjW', type: 'damage', damagePerUse: 440, cooldown: 6, armorPierce: false },
+];
+
+// ── Orb (Mystic) ─────────────────────────────────────────────
+export const orb = [
+  { id: 'orb-t0', name: 'Stasis Orb',       tier: 'T0', hash: 'ocEsi2z', type: 'none' },
+  { id: 'orb-t1', name: 'Suspension Orb',   tier: 'T1', hash: 'THMGNSq', type: 'none' },
+  { id: 'orb-t2', name: 'Imprisonment Orb', tier: 'T2', hash: 'xCAf1Lh', type: 'none' },
+  { id: 'orb-t3', name: 'Neutralization Orb',tier:'T3', hash: 'o3lcxd1', type: 'none' },
+  { id: 'orb-t4', name: 'Timelock Orb',     tier: 'T4', hash: 'vDkiw5y', type: 'none' },
+  { id: 'orb-t5', name: 'Banishment Orb',   tier: 'T5', hash: 'U1vsiyc', type: 'none' },
+  { id: 'orb-t6', name: 'Planefetter Orb',  tier: 'T6', hash: 'FDRA6b5', type: 'none' },
+  { id: 'orb-t7', name: 'Dimensiongate Orb',tier: 'T7', hash: 'jsq5zMC', type: 'none' },
+  { id: 'orb-sweet',    name: 'Orb of Sweet Demise',tier: 'UT', hash: 'nuRdcXC', type: 'none' },
+  { id: 'orb-karma',    name: 'Karma Orb',           tier: 'UT', hash: 'BWUKpN6', type: 'none' },
+  { id: 'orb-enchantment',name:'Enchantment Orb',    tier: 'UT', hash: 'rxdnMsw', type: 'none' },
+  { id: 'orb-aether',   name: 'Orb of Aether',       tier: 'UT', hash: 'dLSVqgP', type: 'none' },
+  { id: 'orb-conquest', name: 'Orb of Conquest',     tier: 'UT', hash: 'GrPUOoz', type: 'none' },
+  { id: 'orb-forbidden',name: 'Forbidden Artifact',  tier: 'UT', hash: 'M8YDoZj', type: 'none' },
+  { id: 'orb-draconis', name: 'Vision of Draconis',  tier: 'UT', hash: '6bFvA7S', type: 'none' },
+  { id: 'orb-conflict', name: 'Orb of Conflict',     tier: 'UT', hash: 'Hm2yTCv', type: 'none' },
+  { id: 'orb-primal',   name: 'Primal Arcana',        tier: 'UT', hash: 'tXII6S1', type: 'none' },
+  { id: 'orb-soul',     name: 'Soul of the Bearer',  tier: 'ST', hash: 'uhRbCgM', type: 'none' },
+  { id: 'orb-scorchium',name: 'Scorchium Stone',     tier: 'ST', hash: 'Yb2qz84', type: 'none' },
+  { id: 'orb-astrolabe',name: 'Cosmic Astrolabe',    tier: 'ST', hash: 'LmcZIBd', type: 'none' },
+  { id: 'orb-sabbath',  name: 'Orb of the Sabbath',  tier: 'ST', hash: 'Gn1GBqj', type: 'none' },
+  { id: 'orb-terror',   name: 'Orb of Terror',        tier: 'UT', hash: 'NPxdXi5', type: 'none' },
+];
+
+// ── Tome (Priest) ────────────────────────────────────────────
+export const tome = [
+  { id: 'tome-t0', name: 'Healing Tome',          tier: 'T0', hash: 'XyNlsZA', type: 'none' },
+  { id: 'tome-t1', name: 'Remedy Tome',           tier: 'T1', hash: 'QtothQf', type: 'none' },
+  { id: 'tome-t2', name: 'Spirit Salve Tome',     tier: 'T2', hash: 'XlBEH1c', type: 'none' },
+  { id: 'tome-t3', name: 'Tome of Rejuvenation',  tier: 'T3', hash: 'KzTtqZK', type: 'none' },
+  { id: 'tome-t4', name: 'Tome of Renewing',      tier: 'T4', hash: 'aJ7r9pF', type: 'none' },
+  { id: 'tome-t5', name: 'Tome of Divine Favor',  tier: 'T5', hash: 'i9077AE', type: 'none' },
+  { id: 'tome-t6', name: 'Tome of Holy Guidance', tier: 'T6', hash: '63EtuBe', type: 'none' },
+  { id: 'tome-t7', name: 'Tome of Hallowed Language',tier:'T7',hash: 'zXTGFP0', type: 'none' },
+  { id: 'tome-purification',name:'Tome of Purification',tier:'UT',hash:'XpQhE6D',type:'none'},
+  { id: 'tome-necronomicon', name: 'Necronomicon',          tier: 'UT', hash: '2QeHp0u', type: 'none' },
+  { id: 'tome-tarnished',   name: 'Tome of the Tarnished Gods',tier:'UT',hash:'KH4laHN',type:'none'},
+  { id: 'tome-pain',        name: 'Tome of Pain',           tier: 'UT', hash: 'ZheqTxR', type: 'none' },
+  { id: 'tome-mushroom',    name: 'Tome of the Mushroom Tribes',tier:'UT',hash:'YShpFqv',type:'none'},
+  { id: 'tome-furor',       name: 'Tome of Holy Furor',     tier: 'UT', hash: 'Qnu3uUJ', type: 'none' },
+  { id: 'tome-protection',  name: 'Tome of Holy Protection',tier: 'UT', hash: 'Cn1Clyi', type: 'none' },
+  { id: 'tome-chaotic',     name: 'Chaotic Scripture',      tier: 'UT', hash: 'JG0yY9F', type: 'none' },
+  { id: 'tome-dragon',      name: 'Tome of the Dragon',     tier: 'UT', hash: 'KczQNS4', type: 'none' },
+  { id: 'tome-botany',      name: 'Botany Book',            tier: 'UT', hash: 'H29ztrQ', type: 'none' },
+  { id: 'tome-geb',         name: 'Book of Geb',            tier: 'ST', hash: 'TGbs7pB', type: 'none' },
+  { id: 'tome-ceremonial',  name: 'Ceremonial Merlot',      tier: 'ST', hash: 'y53TveU', type: 'none' },
+  { id: 'tome-void',        name: 'Void Leeches',           tier: 'ST', hash: 'd4QRvF5', type: 'none' },
+  { id: 'tome-exorcism',    name: 'Tome of Exorcism',       tier: 'ST', hash: 'yaQgElY', type: 'none' },
+];
+
+// ── Scepter (Sorcerer) ───────────────────────────────────────
+export const scepter = [
+  { id: 'scep-t0', name: 'Lightning Scepter',     tier: 'T0', hash: 'XBaCvMb', type: 'damage', damagePerUse: 80,  cooldown: 5, armorPierce: true },
+  { id: 'scep-t1', name: 'Discharge Scepter',     tier: 'T1', hash: 'God5kmx', type: 'damage', damagePerUse: 130, cooldown: 5, armorPierce: true },
+  { id: 'scep-t2', name: 'Thunderclap Scepter',   tier: 'T2', hash: 'eacntzC', type: 'damage', damagePerUse: 180, cooldown: 5, armorPierce: true },
+  { id: 'scep-t3', name: 'Arcblast Scepter',      tier: 'T3', hash: 'ANgqZtV', type: 'damage', damagePerUse: 230, cooldown: 5, armorPierce: true },
+  { id: 'scep-t4', name: 'Cloudflash Scepter',    tier: 'T4', hash: 'w0XwkMZ', type: 'damage', damagePerUse: 280, cooldown: 5, armorPierce: true },
+  { id: 'scep-t5', name: 'Scepter of Skybolts',   tier: 'T5', hash: 'gslGqoL', type: 'damage', damagePerUse: 330, cooldown: 5, armorPierce: true },
+  { id: 'scep-t6', name: 'Scepter of Storms',     tier: 'T6', hash: 'DIRbsr6', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: true },
+  { id: 'scep-t7', name: 'Scepter of the Firmament',tier:'T7',hash: 'gI8eitI', type: 'damage', damagePerUse: 430, cooldown: 5, armorPierce: true },
+  { id: 'scep-honey',      name: 'Honey Scepter',             tier: 'UT', hash: 'yk4q1Jx', type: 'damage', damagePerUse: 320, cooldown: 5, armorPierce: true },
+  { id: 'scep-fulmination',name: 'Scepter of Fulmination',    tier: 'UT', hash: '4S9VsG7', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: true },
+  { id: 'scep-storm',      name: 'Storm Caller',              tier: 'UT', hash: 'vKveimG', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: true },
+  { id: 'scep-siege',      name: 'Siege Scepter',             tier: 'UT', hash: 'O45xxYH', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: true },
+  { id: 'scep-cnidaria',   name: 'Cnidaria Rod',              tier: 'UT', hash: 'fc82s46', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: true },
+  { id: 'scep-devastation',name: 'Scepter of Devastation',    tier: 'UT', hash: 'SvWphtM', type: 'damage', damagePerUse: 430, cooldown: 5, armorPierce: true },
+  { id: 'scep-tezutsu',    name: 'Tezutsu Hanabi',            tier: 'UT', hash: '6IUePZI', type: 'damage', damagePerUse: 440, cooldown: 5, armorPierce: true },
+  { id: 'scep-sainthood',  name: 'Scepter of Sainthood',      tier: 'UT', hash: 'jhYy5w2', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true },
+  { id: 'scep-transgressor',name:"Scepter of the Transgressor",tier:'UT',hash: 'KzZBvci', type: 'damage', damagePerUse: 440, cooldown: 5, armorPierce: true },
+  { id: 'scep-grotesque',  name: 'Grotesque Scepter',         tier: 'ST', hash: 'n75lO60', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: true },
+  { id: 'scep-totem',      name: 'Totem Scepter',             tier: 'ST', hash: '61QpMPk', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true },
+  { id: 'scep-lightshow',  name: 'Lightshow Scepter',         tier: 'ST', hash: '1qwnuhB', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true },
+  { id: 'scep-lovesick',   name: 'Lovesick Scepter',          tier: 'ST', hash: 'JgOW8pt', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: true },
+];
+
+// ── Cloak (Rogue) ────────────────────────────────────────────
+export const cloak = [
+  { id: 'cloak-t0', name: 'Cloak of Shadows',        tier: 'T0', hash: 'EZZo2nl', type: 'none' },
+  { id: 'cloak-t1', name: 'Cloak of Darkness',       tier: 'T1', hash: 'Og5MRjv', type: 'none' },
+  { id: 'cloak-t2', name: 'Cloak of Speed',          tier: 'T2', hash: '7Zj6lxW', type: 'none' },
+  { id: 'cloak-t3', name: 'Cloak of the Night Thief',tier: 'T3', hash: 'PjM3yUA', type: 'none' },
+  { id: 'cloak-t4', name: 'Cloak of the Red Agent',  tier: 'T4', hash: 'zqlh62K', type: 'none' },
+  { id: 'cloak-t5', name: 'Cloak of Endless Twilight',tier:'T5', hash: 'tfSIkBb', type: 'none' },
+  { id: 'cloak-t6', name: 'Cloak of Ghostly Concealment',tier:'T6',hash:'vvDokyq',type:'none'},
+  { id: 'cloak-t7', name: 'Cloak of Nightmares',     tier: 'T7', hash: 'hp2lfQt', type: 'none' },
+  { id: 'cloak-mirror',    name: 'Mirror Cloak',             tier: 'UT', hash: 'WCztONA', type: 'none' },
+  { id: 'cloak-planewalker',name:"Cloak of the Planewalker", tier: 'UT', hash: 'Xqt2Cbq', type: 'none' },
+  { id: 'cloak-mad-god',   name: 'Cloak of the Mad God',    tier: 'UT', hash: '5wzATeW', type: 'none' },
+  { id: 'cloak-darkened',  name: 'Cloak of the Darkened Sun',tier:'UT', hash: 'CfblKuv', type: 'none' },
+  { id: 'cloak-cubic',     name: 'Cloak of Cubic Enigma',   tier: 'UT', hash: 'V27k4Sz', type: 'none' },
+  { id: 'cloak-refraction',name: 'Cloak of Refraction',     tier: 'UT', hash: 'P4v3VhO', type: 'none' },
+  { id: 'cloak-deep',      name: 'Cloak of the Deep',       tier: 'UT', hash: 'rUNGXXP', type: 'none' },
+  { id: 'cloak-bloody',    name: 'Cloak of Bloody Surprises',tier:'UT', hash: 'pgSngpE', type: 'none' },
+  { id: 'cloak-ghastly',   name: 'Ghastly Drape',           tier: 'ST', hash: 'vzdkbXL', type: 'none' },
+  { id: 'cloak-vampiric',  name: 'Vampiric Cape',           tier: 'ST', hash: 'oMfuCxt', type: 'none' },
+  { id: 'cloak-spectre',   name: 'Spectre Cloak',           tier: 'ST', hash: '4UNDR5n', type: 'none' },
+];
+
+// ── Poison (Assassin) ────────────────────────────────────────
+export const poison = [
+  { id: 'poi-t0', name: 'Centipede Poison',tier: 'T0', hash: 'kkaRsxj', type: 'damage', damagePerUse: 150, cooldown: 5, armorPierce: true },
+  { id: 'poi-t1', name: 'Spider Venom',    tier: 'T1', hash: 'c1YyVUz', type: 'damage', damagePerUse: 250, cooldown: 5, armorPierce: true },
+  { id: 'poi-t2', name: 'Pit Viper Poison',tier: 'T2', hash: '2yTuYzh', type: 'damage', damagePerUse: 350, cooldown: 5, armorPierce: true },
+  { id: 'poi-t3', name: 'Stingray Poison', tier: 'T3', hash: 'wntnV3N', type: 'damage', damagePerUse: 450, cooldown: 5, armorPierce: true },
+  { id: 'poi-t4', name: 'Felwasp Toxin',  tier: 'T4', hash: 'rKl5kZ1', type: 'damage', damagePerUse: 550, cooldown: 5, armorPierce: true },
+  { id: 'poi-t5', name: 'Nightwing Venom',tier: 'T5', hash: 'dFYPpvy', type: 'damage', damagePerUse: 650, cooldown: 5, armorPierce: true },
+  { id: 'poi-t6', name: 'Baneserpent Poison',tier:'T6',hash: 'GnMp8Q9', type: 'damage', damagePerUse: 750, cooldown: 5, armorPierce: true },
+  { id: 'poi-t7', name: 'Necrofish Poison',tier: 'T7', hash: 'Ig6IxBQ', type: 'damage', damagePerUse: 850, cooldown: 5, armorPierce: true },
+  { id: 'poi-lightning', name: 'Lightning in a Bottle',    tier: 'UT', hash: 'CfSE7XR', type: 'damage', damagePerUse: 700,  cooldown: 5, armorPierce: true },
+  { id: 'poi-bane',      name: "Spirit's Bane",            tier: 'UT', hash: 'mfeB9TG', type: 'damage', damagePerUse: 750,  cooldown: 5, armorPierce: true },
+  { id: 'poi-murky',     name: 'Murky Toxin',              tier: 'UT', hash: 'YTRasiP', type: 'damage', damagePerUse: 800,  cooldown: 5, armorPierce: true },
+  { id: 'poi-medusozoan',name: 'Bottled Medusozoan',       tier: 'UT', hash: '7DI23IS', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'poi-plague',    name: 'Plague Poison',            tier: 'UT', hash: 'HM0JDSk', type: 'damage', damagePerUse: 950,  cooldown: 5, armorPierce: true },
+  { id: 'poi-polarity',  name: 'Polarity Poison',          tier: 'UT', hash: 'h1s0g17', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'poi-pandemic',  name: 'Pandemic Poison',          tier: 'UT', hash: '9v5yYVD', type: 'damage', damagePerUse: 950,  cooldown: 5, armorPierce: true },
+  { id: 'poi-tyrant',    name: "Tyrant's Toxin",           tier: 'UT', hash: 'rvhwPXq', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'poi-crystallised',name:'Crystallised Fang Venom', tier: 'UT', hash: 'ACein9c', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+  { id: 'poi-makeshift', name: 'Makeshift Blowpipe',       tier: 'ST', hash: 'xi8TTaW', type: 'damage', damagePerUse: 850,  cooldown: 5, armorPierce: true },
+  { id: 'poi-parasitic', name: 'Parasitic Concoction',     tier: 'ST', hash: 'DjK25qQ', type: 'damage', damagePerUse: 880,  cooldown: 5, armorPierce: true },
+  { id: 'poi-virulent',  name: 'Virulent Venom',           tier: 'ST', hash: '1gr1oS8', type: 'damage', damagePerUse: 900,  cooldown: 5, armorPierce: true },
+];
+
+// ── Prism (Trickster) ────────────────────────────────────────
+export const prism = [
+  { id: 'prism-t0', name: 'Decoy Prism',         tier: 'T0', hash: '9Pkitbi', type: 'none' },
+  { id: 'prism-t1', name: 'Deception Prism',     tier: 'T1', hash: 'WCE1J9Q', type: 'none' },
+  { id: 'prism-t2', name: 'Illusion Prism',      tier: 'T2', hash: 'mU87Fxi', type: 'none' },
+  { id: 'prism-t3', name: 'Hallucination Prism', tier: 'T3', hash: 'q3KyyNg', type: 'none' },
+  { id: 'prism-t4', name: 'Prism of Figments',   tier: 'T4', hash: 'CF6D4m3', type: 'none' },
+  { id: 'prism-t5', name: 'Prism of Phantoms',   tier: 'T5', hash: 'GuzQBiT', type: 'none' },
+  { id: 'prism-t6', name: 'Prism of Apparitions',tier: 'T6', hash: 'JFAt0Z2', type: 'none' },
+  { id: 'prism-t7', name: 'Prism of Reveries',   tier: 'T7', hash: '9NgTVtG', type: 'none' },
+  { id: 'prism-fool',      name: "Fool's Prism",             tier: 'UT', hash: 'EKGTaDm', type: 'none' },
+  { id: 'prism-shattered', name: 'Prism of Shattered Light', tier: 'UT', hash: 'SqbNX3N', type: 'none' },
+  { id: 'prism-dancing',   name: 'Prism of Dancing Swords',  tier: 'UT', hash: 'ZMPTyOt', type: 'none' },
+  { id: 'prism-ghostly',   name: 'Ghostly Prism',            tier: 'UT', hash: '7p2zXAF', type: 'none' },
+  { id: 'prism-dire',      name: 'Prism of Dire Instability',tier: 'UT', hash: 'DNNcYb8', type: 'none' },
+  { id: 'prism-ase',       name: "Ase's Echo",               tier: 'UT', hash: 'flXR895', type: 'none' },
+  { id: 'prism-echoes',    name: 'Echoes Prism',             tier: 'UT', hash: 'Wh0Uqt5', type: 'none' },
+  { id: 'prism-corsair',   name: "Corsair's Crown Jewel",    tier: 'UT', hash: 'FrAxNVC', type: 'none' },
+  { id: 'prism-prismimic', name: 'Prismimic',                tier: 'UT', hash: 'u2dVev5', type: 'none' },
+  { id: 'prism-gambler',   name: "Gambler's Fate",           tier: 'UT', hash: 'ZQTDWH3', type: 'none' },
+  { id: 'prism-heart-gold',name: 'Heart of Gold Prism',      tier: 'UT', hash: '6yhAly6', type: 'none' },
+  { id: 'prism-daevite',   name: 'Daevite Progenitor',       tier: 'ST', hash: 'g2atnNN', type: 'none' },
+  { id: 'prism-brain',     name: 'Brain of the Golem',       tier: 'ST', hash: 'ph7LP18', type: 'none' },
+  { id: 'prism-accursed',  name: 'Accursed Memory',          tier: 'ST', hash: 'WHM3615', type: 'none' },
+  { id: 'prism-pumpkin',   name: 'Pumpkin Prism',            tier: 'ST', hash: 'sAWr9V8', type: 'none' },
+];
+
+// ── Quiver (Archer) ──────────────────────────────────────────
+export const quiver = [
+  { id: 'quiv-t0', name: 'Magic Quiver',         tier: 'T0', hash: 'veWybnl', type: 'damage', damagePerUse: 80,  cooldown: 5, armorPierce: false },
+  { id: 'quiv-t1', name: 'Reinforced Quiver',    tier: 'T1', hash: 'DXb4ldO', type: 'damage', damagePerUse: 130, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t2', name: 'Iron Quiver',          tier: 'T2', hash: 'JARaXCR', type: 'damage', damagePerUse: 180, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t3', name: 'Elvencraft Quiver',    tier: 'T3', hash: 'FcASXQv', type: 'damage', damagePerUse: 230, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t4', name: 'Magesteel Quiver',     tier: 'T4', hash: '4mVXfZo', type: 'damage', damagePerUse: 280, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t5', name: 'Golden Quiver',        tier: 'T5', hash: 'XFgqCV5', type: 'damage', damagePerUse: 330, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t6', name: 'Quiver of Elvish Mastery',tier:'T6',hash:'JVpRuPl', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: false },
+  { id: 'quiv-t7', name: 'Quiver of the Autumn King',tier:'T7',hash:'ExxA8ue',type: 'damage', damagePerUse: 430, cooldown: 5, armorPierce: false },
+  { id: 'quiv-thunder', name: 'Quiver of Thunder',     tier: 'UT', hash: 'Hcvifaa', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true  },
+  { id: 'quiv-archerang',name: 'Archerang',             tier: 'UT', hash: 'Xl7c5IL', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: false },
+  { id: 'quiv-cocoon',  name: 'Cocoon Quiver',          tier: 'UT', hash: 'WamyUmm', type: 'damage', damagePerUse: 360, cooldown: 5, armorPierce: false },
+  { id: 'quiv-double',  name: 'Double Vision Darts',    tier: 'UT', hash: 'zJ0A5q4', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'quiv-mad',     name: 'Mad Javelin',            tier: 'UT', hash: 'lCQHhIA', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'quiv-huntsman',name: "Huntsman's Volley",       tier: 'UT', hash: 'X9PQpfr', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: false },
+  { id: 'quiv-quiver',  name: 'Q.U.I.V.E.R.',           tier: 'UT', hash: 'N3xcLCX', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'quiv-shadows', name: 'Quiver of Shadows',      tier: 'UT', hash: '3ItMVWT', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'quiv-blue-bee',name: 'Blue Beehemoth Quiver',  tier: 'UT', hash: '3yxxbS8', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true  },
+  { id: 'quiv-red-bee', name: 'Red Beehemoth Quiver',   tier: 'UT', hash: 'SFcMSuE', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: true  },
+  { id: 'quiv-syringes',name: 'Sinister Syringes',       tier: 'UT', hash: '9FMCBfU', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'quiv-shrieking',name:"Quiver of Shrieking Specters",tier:'ST',hash:'hbTp8Jg',type:'damage',damagePerUse:380,cooldown:5,armorPierce:false},
+  { id: 'quiv-embellished',name:'Embellished Quiver',    tier: 'ST', hash: '81aamkJ', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'quiv-sentry',  name: 'Sentry Turret',          tier: 'ST', hash: 'xsrkxXI', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: false },
+];
+
+// ── Trap (Huntress) ──────────────────────────────────────────
+export const trap = [
+  { id: 'trap-t0', name: 'Hunting Trap',    tier: 'T0', hash: 'zZpw5Js', type: 'damage', damagePerUse: 120, cooldown: 5, armorPierce: false },
+  { id: 'trap-t1', name: 'Wilderlands Trap',tier: 'T1', hash: 'wEtDQXM', type: 'damage', damagePerUse: 200, cooldown: 5, armorPierce: false },
+  { id: 'trap-t2', name: 'Deepforest Trap', tier: 'T2', hash: 'PVkvyuw', type: 'damage', damagePerUse: 280, cooldown: 5, armorPierce: false },
+  { id: 'trap-t3', name: 'Savage Trap',     tier: 'T3', hash: 'IUNXEoQ', type: 'damage', damagePerUse: 360, cooldown: 5, armorPierce: false },
+  { id: 'trap-t4', name: 'Demonhunter Trap',tier: 'T4', hash: 'tQJ9cwB', type: 'damage', damagePerUse: 440, cooldown: 5, armorPierce: false },
+  { id: 'trap-t5', name: 'Dragonstalker Trap',tier:'T5',hash: '9c7MZYN', type: 'damage', damagePerUse: 520, cooldown: 5, armorPierce: false },
+  { id: 'trap-t6', name: 'Giantcatcher Trap',tier:'T6',hash: 'Vs5zLp8', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: false },
+  { id: 'trap-t7', name: 'Depthchaser Trap',tier: 'T7', hash: 'S7s7W4K', type: 'damage', damagePerUse: 680, cooldown: 5, armorPierce: false },
+  { id: 'trap-vile',    name: 'Trap of the Vile Spirit',  tier: 'UT', hash: 'k9Dm96S', type: 'damage', damagePerUse: 650, cooldown: 5, armorPierce: false },
+  { id: 'trap-coral',   name: 'Coral Venom Trap',         tier: 'UT', hash: 'TWsORRd', type: 'damage', damagePerUse: 620, cooldown: 5, armorPierce: false },
+  { id: 'trap-rain',    name: 'Rain Maker',               tier: 'UT', hash: 'WCoe58G', type: 'damage', damagePerUse: 650, cooldown: 5, armorPierce: false },
+  { id: 'trap-deadly',  name: 'Deadly Keg',               tier: 'UT', hash: 'mQpLQWw', type: 'damage', damagePerUse: 700, cooldown: 5, armorPierce: false },
+  { id: 'trap-sulfuric',name: 'Sulfuric Stone',            tier: 'UT', hash: '4rBV117', type: 'damage', damagePerUse: 680, cooldown: 5, armorPierce: false },
+  { id: 'trap-mimicry', name: 'Mimicry Trap',             tier: 'UT', hash: 'utSCqep', type: 'damage', damagePerUse: 660, cooldown: 5, armorPierce: false },
+  { id: 'trap-ocular',  name: 'Ocular Entrapment',        tier: 'UT', hash: '3gEiYPi', type: 'damage', damagePerUse: 680, cooldown: 5, armorPierce: false },
+  { id: 'trap-greedsnatcher',name:'Greedsnatcher Trap',   tier: 'UT', hash: 'kHvXLPb', type: 'damage', damagePerUse: 700, cooldown: 5, armorPierce: false },
+  { id: 'trap-blood',   name: 'Trap of the Blood Spirit', tier: 'UT', hash: 'LTubHGN', type: 'damage', damagePerUse: 700, cooldown: 5, armorPierce: false },
+  { id: 'trap-honeytomb',name: 'Honeytomb Snare',         tier: 'ST', hash: 'gCZAhn2', type: 'damage', damagePerUse: 650, cooldown: 5, armorPierce: false },
+  { id: 'trap-lotus',   name: 'Lifebringing Lotus',       tier: 'ST', hash: 'aW8BWP2', type: 'damage', damagePerUse: 640, cooldown: 5, armorPierce: false },
+  { id: 'trap-lightning',name: 'Lightning Rod',           tier: 'ST', hash: '3aQZ9c7', type: 'damage', damagePerUse: 660, cooldown: 5, armorPierce: true  },
+];
+
+// ── Lute (Bard) ──────────────────────────────────────────────
+export const lute = [
+  { id: 'lute-t0', name: "Novice's Lute",  tier: 'T0', hash: 'AQ1NBE2', type: 'none' },
+  { id: 'lute-t1', name: 'Oakwood Lute',   tier: 'T1', hash: 'FKcYtyt', type: 'none' },
+  { id: 'lute-t2', name: 'Iron Lute',      tier: 'T2', hash: 'OV2CQeK', type: 'none' },
+  { id: 'lute-t3', name: 'Silver Lute',    tier: 'T3', hash: 'jEYKONZ', type: 'none' },
+  { id: 'lute-t4', name: 'Battle Lute',    tier: 'T4', hash: 'uK0VnFa', type: 'none' },
+  { id: 'lute-t5', name: 'Regal Lute',     tier: 'T5', hash: 'xKXYSaD', type: 'none' },
+  { id: 'lute-t6', name: 'Skyward Lute',   tier: 'T6', hash: '7QhzvyK', type: 'none' },
+  { id: 'lute-t7', name: 'Nebular Lute',   tier: 'T7', hash: 'bWsosoU', type: 'none' },
+  { id: 'lute-lullaby',  name: 'Lullaby',              tier: 'UT', hash: 'A7eVjQO', type: 'none' },
+  { id: 'lute-pan',      name: "Piper's Pan Flute",    tier: 'UT', hash: 'AeJWMu4', type: 'none' },
+  { id: 'lute-snake',    name: 'Snake Charmer Pungi',  tier: 'UT', hash: '2QpfLCz', type: 'none' },
+  { id: 'lute-chief',    name: "Chief's War Horn",     tier: 'UT', hash: 'DCGwhPx', type: 'none' },
+  { id: 'lute-wavecrest',name: 'Wavecrest Concertina', tier: 'UT', hash: 'zStUCio', type: 'none' },
+  { id: 'lute-triangle', name: 'The Triangle',         tier: 'UT', hash: 'xfmL60S', type: 'none' },
+  { id: 'lute-pharaoh',  name: "Pharaoh's Requiem",    tier: 'UT', hash: 'wcUJKHq', type: 'none' },
+  { id: 'lute-taiko',    name: 'Taiko Drums',          tier: 'UT', hash: 'pXEtNxl', type: 'none' },
+  { id: 'lute-motivational',name:'Motivational Megaphone',tier:'UT',hash:'tPfgva5',type:'none'},
+  { id: 'lute-noble',    name: 'Noble Mandolin',       tier: 'UT', hash: '5MVXq59', type: 'none' },
+  { id: 'lute-thundering',name:'Thundering Chorus',    tier: 'ST', hash: '49OFQJp', type: 'none' },
+  { id: 'lute-sacred',   name: 'Sacred Lute',          tier: 'ST', hash: '0nnw6nW', type: 'none' },
+  { id: 'lute-angel',    name: "Angel's Fanfare",      tier: 'ST', hash: 'YBa4Ein', type: 'none' },
+  { id: 'lute-inferno',  name: 'Inferno Pick',         tier: 'ST', hash: 'T8AmyDk', type: 'none' },
+];
+
+// ── Star (Ninja) ─────────────────────────────────────────────
+export const star = [
+  { id: 'star-t0', name: 'Basic Star',     tier: 'T0', hash: 'LRqLIFE', type: 'damage', damagePerUse: 80,  cooldown: 5, armorPierce: false },
+  { id: 'star-t1', name: 'Four-Point Star',tier: 'T1', hash: 'Vdc2PBk', type: 'damage', damagePerUse: 130, cooldown: 5, armorPierce: false },
+  { id: 'star-t2', name: 'Spiral Shuriken',tier: 'T2', hash: 'axakPjk', type: 'damage', damagePerUse: 175, cooldown: 5, armorPierce: false },
+  { id: 'star-t3', name: 'Silver Star',    tier: 'T3', hash: 'ygEHtfK', type: 'damage', damagePerUse: 225, cooldown: 5, armorPierce: false },
+  { id: 'star-t4', name: 'Wind Circle',    tier: 'T4', hash: 'XGAqXoY', type: 'damage', damagePerUse: 275, cooldown: 5, armorPierce: false },
+  { id: 'star-t5', name: 'Ice Star',       tier: 'T5', hash: 'oIGFsxt', type: 'damage', damagePerUse: 325, cooldown: 5, armorPierce: false },
+  { id: 'star-t6', name: 'Doom Circle',    tier: 'T6', hash: 'DxW5PCb', type: 'damage', damagePerUse: 375, cooldown: 5, armorPierce: false },
+  { id: 'star-t7', name: 'Dynastic Star',  tier: 'T7', hash: 'UDZUnHv', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'star-spider',   name: 'Spider Shuriken',       tier: 'UT', hash: 'rx702CP', type: 'damage', damagePerUse: 360, cooldown: 5, armorPierce: false },
+  { id: 'star-midnight', name: 'Midnight Star',         tier: 'UT', hash: 'lc5NZhj', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'star-hanagasaku',name:'Hanagasaku',            tier: 'UT', hash: '54Pdtyt', type: 'damage', damagePerUse: 380, cooldown: 5, armorPierce: false },
+  { id: 'star-igneous',  name: 'Igneous Starblossom',   tier: 'UT', hash: 'MIf51tv', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'star-storied',  name: 'Storied Blades',        tier: 'UT', hash: 'gGu0xte', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'star-enlightenment',name:'Star of Enlightenment',tier:'UT',hash:'98qG4Er',type:'damage',damagePerUse:440,cooldown:5,armorPierce:false},
+  { id: 'star-overwhelming',name:'Overwhelming Axehead',tier: 'UT', hash: 'n85clBd', type: 'damage', damagePerUse: 450, cooldown: 5, armorPierce: false },
+  { id: 'star-kageboshi',name: 'Kageboshi',             tier: 'UT', hash: '8PCD0np', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'star-ballistic',name: 'Ballistic Star',        tier: 'UT', hash: 'l0PduTP', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'star-invocation',name:'Invocation Scroll',     tier: 'ST', hash: 'zZhDQ4t', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'star-daybreak', name: 'Daybreak Chakram',      tier: 'ST', hash: 'tl3pWVQ', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+  { id: 'star-crystalline',name:'Crystalline Kunai',    tier: 'ST', hash: '6MqqxEs', type: 'damage', damagePerUse: 400, cooldown: 5, armorPierce: false },
+  { id: 'star-eternal',  name: 'Eternal Star',          tier: 'ST', hash: 'FCMHI6R', type: 'damage', damagePerUse: 440, cooldown: 5, armorPierce: false },
+  { id: 'star-enchanted-chisel',name:'Enchanted Chisel',tier:'ST',  hash: 'CT3OBvM', type: 'damage', damagePerUse: 420, cooldown: 5, armorPierce: false },
+];
+
+// ── Wakizashi (Samurai) ──────────────────────────────────────
+export const wakizashi = [
+  { id: 'waki-t0', name: 'Simple Wakizashi',      tier: 'T0', hash: 'dqX9WWY', type: 'damage', damagePerUse: 100, cooldown: 5, armorPierce: true },
+  { id: 'waki-t1', name: 'Steel Wakizashi',       tier: 'T1', hash: 'ftd8tJw', type: 'damage', damagePerUse: 160, cooldown: 5, armorPierce: true },
+  { id: 'waki-t2', name: 'Crimson Wakizashi',     tier: 'T2', hash: 'lKuSTVs', type: 'damage', damagePerUse: 220, cooldown: 5, armorPierce: true },
+  { id: 'waki-t3', name: 'Enforced Wakizashi',    tier: 'T3', hash: 'uu1CI4M', type: 'damage', damagePerUse: 290, cooldown: 5, armorPierce: true },
+  { id: 'waki-t4', name: 'Turquoise Wakizashi',   tier: 'T4', hash: 'wBTi8fX', type: 'damage', damagePerUse: 360, cooldown: 5, armorPierce: true },
+  { id: 'waki-t5', name: 'Jade-Imbued Wakizashi', tier: 'T5', hash: 'YittzJR', type: 'damage', damagePerUse: 440, cooldown: 5, armorPierce: true },
+  { id: 'waki-t6', name: 'Royal Wakizashi',       tier: 'T6', hash: 'ycLPRDX', type: 'damage', damagePerUse: 520, cooldown: 5, armorPierce: true },
+  { id: 'waki-t7', name: 'Virtuous Wakizashi',    tier: 'T7', hash: 'v6lWa9t', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: true },
+  { id: 'waki-eastern', name: 'Wakizashi of Eastern Winds', tier: 'UT', hash: 's8elan2', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+  { id: 'waki-nsf',     name: 'NSFWakizashi',               tier: 'UT', hash: 'fE1sEZw', type: 'damage', damagePerUse: 560, cooldown: 5, armorPierce: true },
+  { id: 'waki-ronin',   name: "Ronin's Wakizashi",          tier: 'UT', hash: 'pPz0ttB', type: 'damage', damagePerUse: 560, cooldown: 5, armorPierce: true },
+  { id: 'waki-shadow',  name: 'Shadow Serpent Sidearm',     tier: 'UT', hash: 'bURNlfK', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+  { id: 'waki-amaterasu',name:'Amaterasu',                  tier: 'UT', hash: 'gpq6EXr', type: 'damage', damagePerUse: 620, cooldown: 5, armorPierce: true },
+  { id: 'waki-esben',   name: "Esben's Twisted Heart",      tier: 'UT', hash: 'mN3aGBc', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+  { id: 'waki-crossing',name: 'Wakizashi of Crossing Fires',tier: 'UT', hash: 'oSQ2Xq5', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: true },
+  { id: 'waki-fractured',name:'Fractured Gemstone Wakizashi',tier:'UT',hash: 'd6dBKvS', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: true },
+  { id: 'waki-kogbold', name: 'Kogbold Multitool',          tier: 'UT', hash: 'Ot9Xoe5', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+  { id: 'waki-sentinel',name: "Sentinel's Sidearm",         tier: 'UT', hash: '8MAEM43', type: 'damage', damagePerUse: 620, cooldown: 5, armorPierce: true },
+  { id: 'waki-ryu',     name: "Ryu's Blade",                tier: 'ST', hash: 'a1qsbm7', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: true },
+  { id: 'waki-watarimono',name:'Watarimono',                tier: 'ST', hash: '3l7Wxz8', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+  { id: 'waki-sublimation',name:'Sublimation Sidearm',      tier: 'ST', hash: 'Em6bbdl', type: 'damage', damagePerUse: 600, cooldown: 5, armorPierce: true },
+  { id: 'waki-sweetcut',name: 'Sweetcut Wakizashi',         tier: 'ST', hash: 'mUFpKmL', type: 'damage', damagePerUse: 580, cooldown: 5, armorPierce: true },
+];
+
+// ── Sheathblade (Kensei) — wiki page unavailable, using known items ──
+export const sheathblade = [
+  { id: 'sheath-placeholder', name: 'Sheathblade (T0–T7)', tier: 'T6', hash: null, type: 'damage', damagePerUse: 500, cooldown: 5, armorPierce: true },
+];
+
+// ── Summoner Book — wiki page unavailable ─────────────────────
+export const book = [
+  { id: 'book-placeholder', name: 'Summoner Tome (support)', tier: 'T6', hash: null, type: 'none' },
+];
+
+// ── Druid Ability — wiki page unavailable ─────────────────────
+export const spellbook = [
+  { id: 'spellbook-placeholder', name: 'Druid Ability (support)', tier: 'T6', hash: null, type: 'none' },
+];
+
+export const ABILITIES = {
+  helm, shield, seal,
+  spell, skull, orb, book,
+  tome, scepter, spellbook,
+  cloak, poison, prism,
+  quiver, trap, lute,
+  star, wakizashi, sheathblade,
+};

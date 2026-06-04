@@ -25,7 +25,15 @@
       "mcp__plugin_serena_serena__activate_project",
       "mcp__plugin_serena_serena__initial_instructions",
       "mcp__plugin_serena_serena__list_dir",
-      "mcp__plugin_serena_serena__find_symbol"
+      "mcp__plugin_serena_serena__find_symbol",
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\src\\\\data\\\\dungeons.js\" -Pattern \"hash: '\\([A-Za-z0-9]+\\)'\" | ForEach-Object { $_.Matches[0].Groups[1].Value } | Sort-Object -Unique | Measure-Object | Select-Object -ExpandProperty Count)",
+      "PowerShell(New-Item *)",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\sarmuns\\\\Desktop\\\\projetinhos\\\\rotmg_randomizer\\\\src\\\\App.css\"\\).Count)",
+      "Read(//mnt/c/Users/sarmuns/Desktop/projetinhos/**)",
+      "Bash(curl -s http://localhost:5173)",
+      "PowerShell(Start-Sleep -Seconds 3; try { \\(Invoke-WebRequest -Uri \"http://localhost:5173\" -TimeoutSec 5\\).StatusCode } catch { \"not ready: $_\" })",
+      "PowerShell(node -e \"require\\('playwright'\\)\" 2>&1 | Select-Object -First 3)",
+      "PowerShell(Start-Process \"msedge\" -ArgumentList \"http://localhost:5173\")"
     ]
   }
 }

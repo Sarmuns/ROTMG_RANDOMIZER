@@ -8,6 +8,7 @@ import ChallengeResultCard from './components/ChallengeResultCard.jsx';
 import DungeonResultCard from './components/DungeonResultCard.jsx';
 import PoolSelector from './components/PoolSelector.jsx';
 import DungeonPoolSelector from './components/DungeonPoolSelector.jsx';
+import DpsSimulator from './components/DpsSimulator.jsx';
 
 function runSpin(pool, onTick, onDone) {
   if (!pool || pool.length === 0) return;
@@ -37,6 +38,7 @@ function runSpin(pool, onTick, onDone) {
 }
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState('randomizer');
   const [disabledClasses, setDisabledClasses] = useLocalStorage('rotmg_disabled', []);
   const [disabledDungeons, setDisabledDungeons] = useLocalStorage('rotmg_disabled_dungeons', []);
 
@@ -117,7 +119,24 @@ export default function App() {
         <p className="app-subtitle">Realm of the Mad God — Season Picker</p>
       </header>
 
-      <main className="app-main">
+      <nav className="app-tabs">
+        <button
+          className={`app-tab${activeTab === 'randomizer' ? ' app-tab--active' : ''}`}
+          onClick={() => setActiveTab('randomizer')}
+        >
+          🎲 Randomizer
+        </button>
+        <button
+          className={`app-tab${activeTab === 'dps' ? ' app-tab--active' : ''}`}
+          onClick={() => setActiveTab('dps')}
+        >
+          ⚔️ DPS Simulator
+        </button>
+      </nav>
+
+      {activeTab === 'dps' && <DpsSimulator />}
+
+      <main className="app-main" style={{ display: activeTab === 'randomizer' ? undefined : 'none' }}>
         <div className="cards-row cards-row-3">
           <div className="card">
             <div className="card-label">Class</div>
